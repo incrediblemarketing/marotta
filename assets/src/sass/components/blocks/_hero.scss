@@ -1,77 +1,29 @@
-.block-hero {
+.block--hero {
   position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 5vh;
-  @include mq($until: md) {
-    text-align: center;
+  padding-bottom: 175px;
+  z-index: 0;
+
+  video {
+    @include absolute_cover();
+    z-index: -2;
+    object-fit: cover;
+  }
+
+  &::before {
+    @include pseudo_cover();
+    z-index: -1;
+    background: rgba($black, 0.5);
   }
 
   h1 {
-    margin-bottom: 3vh;
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.23em;
-    margin-bottom: 4vh;
-    @include mq(xxl) {
-      font-size: 1.5rem;
-      margin-bottom: 6vh;
-    }
-  }
-  .btn {
-    margin-bottom: 11vh;
-  }
-  .image--holder {
-    @include absolute_cover;
-    background: $blue;
-    img {
-      @include absolute_cover;
-      object-fit: cover;
-      opacity: 0.9;
-      object-position: 66%;
-      @include mq(xl) {
-        object-position: right;
-      }
-    }
-  }
-  a.js-scroll-to {
-    display: inline-block;
-
-    @include mq(md) {
-      margin-left: 100px;
-    }
-
-    .more {
-      height: 13vh;
-      display: flex;
-      align-items: center;
-      width: 1px;
-      @include mq(md) {
-        width: 100px;
-      }
-      p {
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 1.75em;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: $white;
-        margin: 0;
-      }
-
-      .line {
-        margin: 0 20px 0 0;
-        animation: scrollDown 4s infinite ease-out;
-        transform-origin: center top;
-        width: 1px;
-        height: 100%;
-        border-left: 1px solid $white;
-      }
-    }
+    color: $white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4rem;
+    line-height: 1em;
   }
 }

@@ -1,0 +1,109 @@
+.block--procedure_section {
+  padding: 96px 0 73px;
+  min-height: 1000px;
+
+  .procedure--title-area {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 42px;
+
+    h2 {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 4rem;
+      line-height: 1em;
+      text-transform: uppercase;
+      color: #e1e1e1;
+    }
+
+    .btn--teal {
+      font-size: 1.33rem;
+    }
+  }
+
+  .procedure--select-area {
+    .image__holder {
+      position: relative;
+      z-index: 1;
+
+      img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
+      }
+    }
+
+    .top-procedures {
+      display: flex;
+      flex-direction: column;
+      margin-top: 37px;
+
+      .procedure--item {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        > a {
+          width: 250px;
+          font-size: 2.3rem;
+          line-height: 2em;
+          text-transform: capitalize;
+          color: #e1e1e1;
+          z-index: 0;
+
+          &::before {
+            content: "";
+            display: block;
+            width: calc(100% + 60px);
+            left: -60px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+          }
+        }
+
+        .sub--procedures {
+          display: none;
+        }
+
+        &.active {
+          align-items: flex-start;
+          > a {
+            background: #f1f1f1;
+            color: $primary;
+            position: relative;
+
+            &::before {
+              background: #f1f1f1;
+            }
+          }
+          .sub--procedures {
+            background: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px 86px;
+            z-index: 9;
+            min-width: 470px;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            a {
+              font-size: 1.33rem;
+              line-height: 1.5em;
+              letter-spacing: 1px;
+              color: $charcoal;
+              padding: 13px 0;
+
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

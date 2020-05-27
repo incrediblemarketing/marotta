@@ -24,7 +24,7 @@ var gulp = require("gulp"),
   zip = require("gulp-zip");
 
 var themeName = "incredibletheme",
-  localSiteUrl = "dev.incredible.com",
+  localSiteUrl = "dev.marotta.com",
   buildDir = "./build/",
   buildInclude = [
     // include all

@@ -96,9 +96,7 @@
                                 "5": "5",
                                 "6": "6"
                             },
-                            "default_value": [
-                                1
-                            ],
+                            "default_value": 1,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -845,10 +843,10 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5e73e90f7ff16",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
+                            "key": "field_5ecd55fbc7f04",
+                            "label": "Background Video",
+                            "name": "background_video",
+                            "type": "file",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -857,16 +855,93 @@
                                 "class": "hide-label",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "medium",
+                            "return_format": "url",
                             "library": "all",
-                            "min_width": "",
-                            "min_height": "",
                             "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ecd9bc15cf4a": {
+                    "key": "layout_5ecd9bc15cf4a",
+                    "name": "procedure_section",
+                    "label": "Procedure Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ecd9bc15cf4b",
+                            "label": "Block Options",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "left",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5ecd9bc15cf4c",
+                            "label": "Block Options",
+                            "name": "block_options",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5b5b6ae092e59"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5ecd9bc15cf4d",
+                            "label": "Content",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "left",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5ecd9bc15cf4e",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -1161,5 +1236,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584654828
+    "modified": 1590533110
 }

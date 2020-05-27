@@ -1,0 +1,36 @@
+.btn--primary {
+  display: flex;
+  height: 60px;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  border-left: 10px solid $white;
+  color: $white;
+  background: $primary;
+  font-size: 1.3rem;
+  line-height: 1em;
+  font-weight: normal;
+
+  i {
+    margin-left: 7px;
+  }
+}
+
+.btn--teal {
+  font-size: 1.77rem;
+  line-height: 1rem;
+  color: $primary;
+
+  i {
+    position: relative;
+    left: 10px;
+    top: 4px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover {
+    i {
+      left: 20px;
+    }
+  }
+}

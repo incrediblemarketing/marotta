@@ -17,7 +17,7 @@
 function im_register_styles() {
 	$theme         = wp_get_theme();
 	$theme_version = $theme->get( 'Version' );
-	wp_register_style( 'adobe-fonts', 'https://use.typekit.net/zbx1qfw.css', '', $theme_version, 'all' );
+	wp_register_style( 'adobe-fonts', 'https://use.typekit.net/xdy6tqu.css', '', $theme_version, 'all' );
 	wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/assets/dist/plugins/fontawesome-pro/css/all.min.css', '', $theme_version, 'all' );
 	wp_register_style( 'swiper', get_template_directory_uri() . '/assets/dist/plugins/swiper/css/swiper.min.css', '', $theme_version, 'all' );
 	wp_register_style( 'main', get_template_directory_uri() . '/assets/dist/css/main.min.css', '', $theme_version, 'all' );
