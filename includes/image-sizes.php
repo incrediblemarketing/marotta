@@ -19,6 +19,7 @@ add_image_size( 'hero_thumb', 1920, 1080, true );
 add_image_size( 'page_header_thumb', 1920, 548, true );
 add_image_size( 'blog_row_thumb', 370, 223, true );
 add_image_size( 'post_large', 1430, 796, true );
+add_image_size( 'gallery_thumb', 370, 150, true );
 
 /**
  * Add Image Sizes to Array
@@ -37,6 +38,7 @@ function im_image_sizes( $sizes ) {
 			'page_header_thumb'  => __( 'Page Header Thumbnail' ),
 			'blog_row_thumb'     => __( 'Blog Row Thumbnail' ),
 			'post_large'         => __( 'Post Large' ),
+			'gallery_thumb'      => __( 'Gallery Thumb' ),
 		)
 	);
 }
@@ -69,7 +71,7 @@ function im_get_placeholder_image( $size = full, $class = '', $bg_color = '25252
  * @param string|int   $text_color string or int (usually a HEX) as its the text color.
  */
 function im_the_placeholder_image( $size = full, $class = '', $bg_color = '252525', $text_color = 'FFFFFF' ) {
-	echo esc_html( im_get_placeholder_image( $size, $class, $bg_color, $text_color ) );
+	echo im_get_placeholder_image( $size, $class, $bg_color, $text_color );
 }
 
 /**
@@ -101,6 +103,10 @@ function im_get_all_image_sizes() {
 		'post_large'         => array(
 			'width'  => 1430,
 			'height' => 796,
+		),
+		'hero_thumb'         => array(
+			'width'  => 1920,
+			'height' => 1080,
 		),
 	);
 	return array_merge( $image_sizes, $_wp_additional_image_sizes );

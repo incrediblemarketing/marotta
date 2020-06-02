@@ -298,6 +298,49 @@
             "endpoint": 0
         },
         {
+            "key": "field_5ed3397fe7e27",
+            "label": "Map Image",
+            "name": "map_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ed5720954bc1",
+            "label": "Footer Bottom Text",
+            "name": "footer_bottom_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_593799c61900a",
             "label": "Copyright",
             "name": "copyright",
@@ -315,6 +358,65 @@
             "prepend": "©",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5ed3383deb235",
+            "label": "Treat Yourself Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ed3384deb236",
+            "label": "Treat Content",
+            "name": "treat_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5ed3385feb237",
+            "label": "Treat Background Image",
+            "name": "treat_background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_593789f4da250",
@@ -378,7 +480,7 @@
                         "email": "Email",
                         "location": "Location"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 1,
                     "multiple": 0,
                     "ui": 0,
@@ -514,6 +616,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5ed33bd746491",
+            "label": "Business Fax",
+            "name": "business_fax",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "(999) 999-9999",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -533,5 +654,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542229960
+    "modified": 1591046687
 }

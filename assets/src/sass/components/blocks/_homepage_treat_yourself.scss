@@ -1,0 +1,40 @@
+.block--homepage_treat_yourself {
+  position: relative;
+
+  .image__holder {
+    @include absolute_cover;
+
+    img {
+      @include absolute_cover;
+      object-fit: cover;
+    }
+  }
+
+  .col-12 {
+    padding: 0;
+  }
+
+  .content--area {
+    background: $primary;
+    color: $white;
+    padding: 117px 142px 121px 165px;
+    width: 573px;
+    margin-left: 72px;
+
+    h2 {
+      font-size: 4rem;
+      font-weight: normal;
+      line-height: 1em;
+      margin-bottom: 50px;
+      color: $white;
+    }
+
+    p {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

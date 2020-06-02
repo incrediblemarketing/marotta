@@ -243,7 +243,35 @@
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
             }
-          });
+					});
+          var testimonial_block = new Swiper(".testimonial-container", {
+						slidesPerView: 'auto',
+						centeredSlides: true,
+            loop: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            }
+					});
+					
+					var galleryThumbs = new Swiper('.gallery-thumb', {
+						spaceBetween: 30,
+						slidesPerView: 3,
+						loop: true,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+					});
+					var galleryTop = new Swiper('.gallery-container', {
+						spaceBetween: 10,
+						loop:true,
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+						thumbs: {
+							swiper: galleryThumbs,
+						},
+					});
         }
       }
     };

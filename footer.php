@@ -19,21 +19,77 @@
 	$address_link = get_field( 'business_address_link', 'option' );
 	$phone        = get_field( 'business_phone_display', 'option' );
 	$phone_url    = get_field( 'business_phone_url', 'option' );
+	$fax          = get_field( 'business_fax', 'option' );
+	$bg_image     = get_field( 'treat_background_image', 'option' );
+	$map_image    = get_field( 'map_image', 'option' );
+	$content      = get_field( 'treat_content', 'option' );
+	$bottom_text  = get_field( 'footer_bottom_text', 'option' );
+
 ?>
+<section class="block block--homepage_treat_yourself ">
+	<div class="image__holder">
+		<img src="<?php echo esc_attr( $bg_image['sizes']['hero_thumb'] ); ?>" />
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="content--area">
+					<?php echo $content; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-<footer class="footer bg-light">
-	<?php get_template_part( 'components/social-icons' ); ?>
-	<?php if ( $phone_url && $phone ) : ?>
-	<p><a href="tel:+1-<?php echo esc_attr( $phone_url ); ?>"><?php echo esc_attr( $phone ); ?></a></p>
-	<?php endif; ?>
+<section class="block block--info_area">
+	<div class="image__holder">
+		<img src="<?php echo esc_attr( $map_image['sizes']['hero_thumb'] ); ?>" />
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="content--area">
+					<div class="address--area">
+						<?php if ( $address_link && $address && $address2 ) : ?>
+						<p><i class="fas fa-map-marker-alt"></i> <?php echo esc_attr( $address ); ?><br /><?php echo esc_attr( $address2 ); ?></p>
+						<a href="<?php echo esc_attr( $address_link ); ?>" class="btn--teal" target="_blank">Get directions <i class="fal fa-long-arrow-right"></i></a>
+						<?php endif; ?>
+					</div>
+					<div class="phone--area">
+						<?php if ( $phone_url && $phone ) : ?>
+						<p><i class="fas fa-phone"></i> <a href="tel:+1-<?php echo esc_attr( $phone_url ); ?>"><?php echo esc_attr( $phone ); ?></a></p>
+						<?php endif; ?>
+						<p><i class="fas fa-fax"></i> <?php echo esc_attr( $fax ); ?></p>
 
-	<?php if ( $address_link && $address && $address2 ) : ?>
-	<p><a href="<?php echo esc_attr( $address_link ); ?>" target="_blank">
-			<?php echo esc_attr( $address ); ?><br />
-			<?php echo esc_attr( $address2 ); ?></a></p>
-	<?php endif; ?>
+						<a href="/contact/" class="btn--teal">Contact us <i class="fal fa-long-arrow-right"></i></a>
+					</div>
+					<?php get_template_part( 'components/social-icons' ); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?> | <a href="/privacy-policy/">Privacy Policy</a> & <a href="/terms-of-use/">Terms of Use</a> | Digital Marketing By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part( 'components/svg/incredible-marketing' ); ?>Incredible Marketing</a></p>
+<section class="block block--footer-form">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-xl-9">
+					<h3>Schedule a consultation</h3>
+					<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false"]' ); ?>
+			</div>
+		</h3>
+	</div>
+</section>
+
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<?php echo $bottom_text; ?>
+				<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?> | <a href="#">HIPAA</a> | All Rights Reserved | <a href="#">Patient Rights & Responsibilities</a> | <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a> | Digital Marketing By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part( 'components/svg/incredible-marketing' ); ?>Incredible Marketing</a></p>
+			</div>
+		</div>
+	</div>
 </footer>
 
 </div><!-- end of .site-wrap -->

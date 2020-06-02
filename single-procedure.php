@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiper Nav
+ * Single Procedure
  *
  * @category   Components
  * @package    WordPress
@@ -11,9 +11,14 @@
  * @since      1.0.0
  */
 
-?>
+get_header(); ?>
 
-<div class="swiper--nav">
-	<div class="swiper-button-next"><i class="fal fa-long-arrow-right"></i></div>
-	<div class="swiper-button-prev"><i class="fal fa-long-arrow-left"></i></div>
-</div>
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : ?>
+		<?php the_post(); ?>
+		<?php get_template_part( 'components/blocks' ); ?>
+	<?php endwhile; ?> 
+<?php endif; ?>  
+
+<?php
+get_footer();

@@ -8,6 +8,10 @@ body {
   font-size: 1rem;
   line-height: 1.7777em;
   color: $charcoal;
+
+  &:not(.home) {
+    line-height: 1.27em;
+  }
 }
 
 *:last-child {
@@ -51,4 +55,17 @@ a {
   background: $selection-highlight-background;
   color: $selection-highlight-color;
   text-shadow: none;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.33rem;
+  line-height: 1.28em;
+  color: $primary;
 }

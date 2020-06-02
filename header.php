@@ -31,7 +31,3 @@
 	<div class="site-wrap">
 	<?php get_template_part( 'components/mobile-menu' ); ?>
 		<?php get_template_part( 'components/site-nav' ); ?>
-
-		<?php if ( ! is_front_page() ) : ?>
-			<?php get_template_part( 'components/page-header' ); ?>
-		<?php endif; ?>

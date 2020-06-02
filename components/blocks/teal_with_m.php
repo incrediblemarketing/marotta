@@ -1,6 +1,6 @@
 <?php
 /**
- * Swiper Nav
+ * Display Teal with M Block
  *
  * @category   Components
  * @package    WordPress
@@ -11,9 +11,13 @@
  * @since      1.0.0
  */
 
+$content = get_sub_field( 'content' );
 ?>
 
-<div class="swiper--nav">
-	<div class="swiper-button-next"><i class="fal fa-long-arrow-right"></i></div>
-	<div class="swiper-button-prev"><i class="fal fa-long-arrow-left"></i></div>
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<?php echo $content; ?>
+		</div>
+	</div>
 </div>

@@ -1,0 +1,20 @@
+.block--teal_with_m {
+  position: relative;
+  padding: 148px 0;
+  text-align: center;
+  color: $white;
+  font-size: 1.77rem;
+  line-height: 1.28em;
+  background: $primary;
+  z-index: 0;
+  overflow: hidden;
+
+  &::before {
+    content: url("/wp-content/uploads/2020/06/m-logo-1.png");
+    z-index: -1;
+    position: absolute;
+    right: 221px;
+    top: -66px;
+    opacity: 0.15;
+  }
+}
