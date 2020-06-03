@@ -1,0 +1,27 @@
+.block--accolade_area {
+  padding: 66px 0 99px;
+  text-align: center;
+
+  h2 {
+    font-size: 4rem;
+    line-height: 1em;
+    font-weight: normal;
+    color: #e1e1e1;
+
+    strong {
+      font-size: 1.72em;
+      font-family: $tangerine;
+      color: $primary;
+      font-weight: normal;
+    }
+  }
+
+  .acc--gallery {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin: 0 3vw;
+    }
+  }
+}

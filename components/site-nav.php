@@ -24,7 +24,7 @@ $address_link = get_field( 'business_address_link', 'option' );
 		<div class="top--nav">
 		<?php if ( $address_link && $address && $address2 ) : ?>
 		<p class="address--nav"><i class="fas fa-map-marker-alt"></i> <a href="<?php echo esc_attr( $address_link ); ?>" target="_blank">
-		<?php echo esc_attr( $address ); ?>, <?php echo esc_attr( $address2 ); ?></a></p>
+			<?php echo esc_attr( $address ); ?>, <?php echo esc_attr( $address2 ); ?></a></p>
 		<?php endif; ?>
 			<?php get_template_part( 'components/call' ); ?>
 			<?php get_template_part( 'components/social-icons' ); ?>

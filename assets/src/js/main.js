@@ -253,6 +253,15 @@
               prevEl: ".swiper-button-prev"
             }
 					});
+					var testimonial_block = new Swiper(".testimonial--single-container", {
+						slidesPerView: 1,
+						centeredSlides: true,
+            loop: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            }
+					});
 					
 					var galleryThumbs = new Swiper('.gallery-thumb', {
 						spaceBetween: 30,
