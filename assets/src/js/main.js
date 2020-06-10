@@ -172,68 +172,73 @@
           });
         },
         galleryBuilder: function() {
-          loadmore();
-          clickLoadmore();
-          clickLightBox();
-          $('select[data-toggle="categories"]').on("change", function() {
-            var $tax_id = $(this)
-              .find(":selected")
-              .data("setProcedure");
-            console.log($tax_id);
-            $("#grid__gallery").fadeOut("slow", function() {
-              $.ajax({
-                url: im.ajax_url,
-                type: "get",
-                data: {
-                  action: "get_gallery_info",
-                  taxid: $tax_id
-                },
-                success: function(response) {
-                  console.log(response);
-                  $("#grid__gallery")
-                    .empty()
-                    .append(response)
-                    .fadeIn("slow", function() {
-                      loadmore();
-                    });
-                  clickLoadmore();
-                  clickLightBox();
-                }
-              });
-            });
-          });
+					var settings_thumb = {
+						spaceBetween: 30,
+						slidesPerView: 3,
+						loop: true,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+					};
+				/*	var gallery_thumb_settings = {
+						spaceBetween: 15,
+						slidesPerView: 1,
+						loop: true,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+						navigation: {
+							nextEl: '.tax-next',
+							prevEl: '.tax-prev',
+						},
+						pagination: {
+							el: '.swiper-pagination',
+							clickable: true,
+							renderBullet: function (index, className) {
+								return '<span class="' + className + '">' + (index + 1) + '</span>';
+							},
+						},
+					}
+					var galleryTaxThumbs = new Swiper('.gallery--tax-thumbs', gallery_thumb_settings);*/
 
-          function loadmore() {
-            $('button[data-toggle="load-more"]').fadeIn();
-            $(".gallery__item")
-              .slice(10, 100)
-              .hide();
-            if ($(".gallery__item:hidden").length === 0) {
-              $('button[data-toggle="load-more"]').fadeOut("slow");
-            }
-          }
+					var gallery_settings = {
+						spaceBetween: 10,
+						pagination: {
+							el: '.gallery--nav .swiper-pagination',
+							type: 'fraction',
+						},
+						navigation: {
+							nextEl: '.gallery--nav .swiper-button-next',
+							prevEl: '.gallery--nav .swiper-button-prev',
+						},
+					};
 
-          function clickLoadmore() {
-            $('button[data-toggle="load-more"]').on("click", function(e) {
-              e.preventDefault();
-              $(".gallery__item:hidden")
-                .slice(0, 10)
-                .slideDown();
-              if ($(".gallery__item:hidden").length == 0) {
-                $('button[data-toggle="load-more"]').fadeOut("slow");
-              }
-            });
-          }
+					var galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
 
-          function clickLightBox() {
-            $('[data-toggle="lightbox"').on("click", function() {
-              $(this).addClass("hi");
-              $(this)
-                .closest(".gallery__item")
-                .find(".lightbox--patient")
-                .toggleClass("open-lightbox");
-            });
-          }
+					$('#doctors').on('change',function(){
+						if($('.swiper--hidden .swiper-slide[data=hidden]').length > 0){
+							$('.swiper--hidden .swiper-slide[data=hidden]').each( function (){
+								console.log($(this));
+								$('.gallery--tax-container .swiper-wrapper').append($(this));
+							});
+							galleryTax.destroy(false, true);
+							galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
+						}
+						
+						var selected_doc = $(this).children("option:selected").val();
+						console.log(selected_doc);
+						if(selected_doc !== 0){
+							$('.gallery-count').each(function() {
+								if($(this).data('doc') !== selected_doc){
+									$(this).parent().attr('data', 'hidden');
+									$('.gallery--tax-container .swiper-slide[data=hidden]').each( function (){
+										$('.swiper--hidden').append($(this));
+									});
+								}
+
+							});
+							galleryTax.destroy(false, true);
+							galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
+						}
+					});
         },
         swiperSetup: function() {
           var gallery_block = new Swiper(".swiper__gallery", {
@@ -263,6 +268,16 @@
             }
 					});
 					
+					var team_swiper = new Swiper(".team--scroller", {
+						slidesPerView: 1,
+						centeredSlides: true,
+            loop: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            }
+					});
+					
 					var galleryThumbs = new Swiper('.gallery-thumb', {
 						spaceBetween: 30,
 						slidesPerView: 3,
@@ -270,6 +285,7 @@
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
 					});
+
 					var galleryTop = new Swiper('.gallery-container', {
 						spaceBetween: 10,
 						loop:true,
@@ -281,6 +297,27 @@
 							swiper: galleryThumbs,
 						},
 					});
+
+					
+					var gal_count = $('.gallery-count').length;
+					for (var i = 0; i < gal_count; i++) {
+						var name = '.gallery-container-' + i;
+						var thumb_name = '.gallery-thumb-' + i;
+						var galleryThumb = new Swiper(thumb_name, {
+									spaceBetween: 30,
+									slidesPerView: 3,
+									loop: true,
+									watchSlidesVisibility: true,
+									watchSlidesProgress: true,
+						});
+						var galleryTop = new Swiper(name, {
+							spaceBetween: 10,
+							loop:true,
+							thumbs: {
+								swiper: galleryThumb,
+							},
+						});
+					}
         }
       }
     };

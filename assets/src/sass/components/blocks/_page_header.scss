@@ -9,9 +9,14 @@
     @include absolute_cover;
     z-index: 0;
     img {
-      @include absolute_cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: 1;
+      object-position: center;
     }
 
     &::after {
@@ -29,6 +34,19 @@
       line-height: 1em;
       font-weight: normal;
       color: $white;
+    }
+  }
+}
+
+.page-id-1639 {
+  .block--page_header {
+    .image__holder {
+      &::after {
+        display: none;
+      }
+    }
+    .header--content {
+      display: none;
     }
   }
 }

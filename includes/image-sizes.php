@@ -20,6 +20,7 @@ add_image_size( 'page_header_thumb', 1920, 548, true );
 add_image_size( 'blog_row_thumb', 370, 223, true );
 add_image_size( 'post_large', 1430, 796, true );
 add_image_size( 'gallery_thumb', 370, 150, true );
+add_image_size( 'team_thumb', 470, 613, true );
 
 /**
  * Add Image Sizes to Array
@@ -39,6 +40,7 @@ function im_image_sizes( $sizes ) {
 			'blog_row_thumb'     => __( 'Blog Row Thumbnail' ),
 			'post_large'         => __( 'Post Large' ),
 			'gallery_thumb'      => __( 'Gallery Thumb' ),
+			'team_thumb'      => __( 'Team Thumb' ),
 		)
 	);
 }
@@ -107,6 +109,10 @@ function im_get_all_image_sizes() {
 		'hero_thumb'         => array(
 			'width'  => 1920,
 			'height' => 1080,
+		),
+		'team_thumb'         => array(
+			'width'  => 470,
+			'height' => 613,
 		),
 	);
 	return array_merge( $image_sizes, $_wp_additional_image_sizes );

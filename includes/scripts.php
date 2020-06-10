@@ -57,9 +57,8 @@ function im_register_scripts() {
 		wp_enqueue_script( 'gsap-' . str_replace( '.js', '', $gsap_plugin ), get_template_directory_uri() . '/assets/dist/plugins/gsap/' . $gsap_plugin, array( 'main' ), $theme_version, false );
 	}
 
-	wp_register_script( 'swiper', get_template_directory_uri() . '/assets/dist/plugins/swiper/js/swiper.min.js', '', $theme_version, true );
+	wp_register_script( 'swiper', get_template_directory_uri() . '/assets/dist/plugins/swiper/js/swiper.js', '', $theme_version, true );
 	wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/dist/plugins/bootstrap/js/bootstrap.bundle.min.js', '', $theme_version, false );
-	wp_register_script( 'swiper', get_template_directory_uri() . '/assets/dist/plugins/swiper/js/swiper.min.js', '', $theme_version, true );
 	wp_register_script( 'scrollmagic', get_template_directory_uri() . '/assets/dist/plugins/scrollmagic/ScrollMagic.min.js', '', $theme_version, true );
 	wp_register_script( 'scrollanimation', get_template_directory_uri() . '/assets/dist/plugins/scrollmagic/plugins/animation.gsap.min.js', '', $theme_version, true );
 	wp_register_script( 'scrollindicator', get_template_directory_uri() . '/assets/dist/plugins/scrollmagic/plugins/debug.addIndicators.min.js', '', $theme_version, true );

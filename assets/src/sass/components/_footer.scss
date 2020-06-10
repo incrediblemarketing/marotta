@@ -9,6 +9,13 @@
   padding: 3px;
 }
 
+.page-id-1639 {
+  .block--info_area,
+  .block--footer-form {
+    display: none !important;
+  }
+}
+
 .block--info_area {
   position: relative;
   min-height: 800px;

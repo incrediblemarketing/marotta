@@ -1,1 +1,32 @@
-.block {position:relative;}
+.block {
+  position: relative;
+}
+
+.page__gallery {
+  padding: 325px 0 145px;
+
+  h1 {
+    border-bottom: 1px solid $primary;
+    color: $primary;
+    font-weight: normal;
+    padding-bottom: 17px;
+    margin-bottom: 40px;
+    font-size: 1.77rem;
+    list-style: 1.3em;
+    margin-top: 75px;
+  }
+
+  .breadcrumbs {
+    font-size: 16px;
+    line-height: 1em;
+    color: $charcoal;
+
+    a {
+      color: $charcoal;
+    }
+
+    span {
+      color: $primary;
+    }
+  }
+}

@@ -24,3 +24,16 @@
     font-weight: normal;
   }
 }
+
+.page-id-1639,
+.page-id-1920 {
+  .block--white_block_with_breadcrumbs {
+    h1 {
+      display: none;
+    }
+
+    .breadcrumbs {
+      margin: 0;
+    }
+  }
+}

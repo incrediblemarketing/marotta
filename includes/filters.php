@@ -64,6 +64,9 @@ add_filter( 'use_block_editor_for_post_type', 'im_disable_gutenberg', 10, 2 );
 add_filter(
 	'gform_submit_button',
 	function ( $button, $form ) {
+		if ( 2 === $form['id'] ) {
+			return "<button class='btn--primary gform_button' id='gform_submit_button_{$form['id']}'>" . $form['button']['text'] . ' <i class="fal fa-long-arrow-right"></i></button>';
+		}
 		return "<button class='btn--white gform_button' id='gform_submit_button_{$form['id']}'>" . $form['button']['text'] . '</button>';
 	},
 	10,

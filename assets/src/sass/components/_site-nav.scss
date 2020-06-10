@@ -20,6 +20,7 @@
       margin-right: 15px;
       filter: brightness(0) invert(1);
       transition: all 0.4s ease-in-out;
+      margin-top: 50px;
     }
   }
 
@@ -239,6 +240,7 @@
       .m-logo {
         height: 60px;
         width: auto;
+        margin: 0;
       }
     }
 
@@ -268,6 +270,79 @@
 
             &::before {
               bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.tax-procedure_type {
+  .site-nav {
+    .logo {
+      .m-logo {
+        filter: none;
+      }
+    }
+    .right--nav {
+      p.address--nav {
+        i,
+        a {
+          color: $black;
+        }
+      }
+      .top--nav {
+        border-bottom: 1px solid $black;
+
+        .phone--nav {
+          color: $black;
+
+          i {
+            color: $black;
+          }
+        }
+
+        .social-icons {
+          li {
+            a {
+              color: $black;
+            }
+          }
+        }
+      }
+      .bottom-nav {
+        .menu {
+          > li {
+            a {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+
+    &.sticky {
+      .logo {
+        .m-logo {
+          filter: brightness(0) invert(1);
+        }
+      }
+      .right--nav {
+        .top--nav {
+          .phone--nav {
+            color: $white;
+            i {
+              color: $white;
+            }
+          }
+        }
+        .bottom-nav {
+          .menu {
+            > li {
+              a {
+                color: $white;
+              }
             }
           }
         }
