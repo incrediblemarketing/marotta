@@ -38,6 +38,9 @@
       }
 
       @include mq(xxl) {
+        height: 90px;
+      }
+      @include mq(xxxl) {
         height: 111px;
       }
     }
