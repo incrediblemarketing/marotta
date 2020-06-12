@@ -7,8 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 0 110px;
+  padding: 0 15px;
   transition: all 0.4s ease-in-out;
+
+  @include mq(xl) {
+    padding: 0 0 0 35px;
+  }
+  @include mq(xxl) {
+    padding: 0 0 0 5.5vw;
+  }
 
   .sub-menu {
     display: none;
@@ -16,30 +23,72 @@
 
   .logo {
     .m-logo {
-      height: 111px;
+      height: 50px;
       margin-right: 15px;
       filter: brightness(0) invert(1);
       transition: all 0.4s ease-in-out;
-      margin-top: 50px;
+
+      @include mq(md) {
+        height: 75px;
+      }
+
+      @include mq(xl) {
+        margin-top: 50px;
+        height: 80px;
+      }
+
+      @include mq(xxl) {
+        height: 111px;
+      }
     }
   }
 
   button {
-    display: none;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    border: 1px solid $white;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    flex-direction: column;
+    margin-left: 10px;
+
+    @include mq(md) {
+      margin-left: 30px;
+    }
+
+    @include mq(xl) {
+      display: none;
+    }
+
+    span {
+      width: 100%;
+      height: 2px;
+      background: $white;
+      margin: 2px 0;
+    }
   }
 
   .right--nav {
-    width: 100%;
     display: flex;
     flex-direction: column;
     transition: all 0.4s ease-in-out;
+    margin-left: auto;
+
+    @include mq(xl) {
+      width: 100%;
+    }
 
     .top--nav {
-      border-bottom: 1px solid $white;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
       transition: all 0.4s ease-in-out;
+
+      @include mq(xl) {
+        border-bottom: 1px solid $white;
+      }
 
       > * {
         height: 128px;
@@ -50,12 +99,21 @@
 
       p.address--nav {
         margin: 0;
-        padding: 0 27px;
+        padding: 0 10px;
         font-size: 16px;
         border-width: 1px;
         border-style: solid;
         border-image: linear-gradient(to bottom, transparent, $white) 1 100%;
         border-left: 0;
+        display: none;
+
+        @include mq(xl) {
+          display: flex;
+        }
+
+        @include mq(xxl) {
+          padding: 0 27px;
+        }
 
         a {
           color: $white;
@@ -67,11 +125,20 @@
       }
 
       .phone--nav {
-        padding: 0 20px;
         color: $white;
         font-size: 16px;
-        height: 128px;
+        height: 80px;
         transition: all 0.4s ease-in-out;
+        white-space: nowrap;
+
+        @include mq(md) {
+          padding: 0 10px;
+          height: 128px;
+        }
+
+        @include mq(xxl) {
+          padding: 0 20px;
+        }
 
         i {
           height: 50px;
@@ -81,26 +148,44 @@
           justify-content: center;
           color: $white;
         }
+        span {
+          display: none;
+          @include mq(md) {
+            display: inline-block;
+          }
+        }
       }
 
       .social-icons {
-        display: flex;
-        padding: 0 24px;
+        display: none !important;
+        padding: 0 10px;
         border-width: 1px;
         border-style: solid;
         border-image: linear-gradient(to bottom, transparent, $white) 1 100%;
         border-right: 0;
 
+        @include mq(xl) {
+          display: flex !important;
+        }
+
+        @include mq(xxl) {
+          padding: 0 24px;
+        }
+
         li {
           a {
             height: 50px;
-            width: 50px;
+            width: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: $white;
             transition: all 0.4s ease-in-out;
             background: transparent;
+
+            @include mq(xxl) {
+              width: 50px;
+            }
 
             &:hover {
               background: $primary;
@@ -110,19 +195,43 @@
       }
 
       .button--area {
-        padding: 0 110px 0 40px;
+        padding: 0 10px;
         border-width: 1px;
         border-style: solid;
-        border-image: linear-gradient(to bottom, transparent, $white) 1 100%;
         border-right: 0;
+        display: none;
+
+        @include mq(xl) {
+          display: flex;
+          border-image: linear-gradient(to bottom, transparent, $white) 1 100%;
+        }
+
+        @include mq(xxl) {
+          padding: 0 110px 0 40px;
+        }
+
+        .btn--primary {
+          width: 290px;
+
+          @include mq(xxl) {
+            width: 300px;
+          }
+        }
       }
     }
     .bottom-nav {
-      display: flex;
+      display: none;
       align-items: flex-start;
       justify-content: flex-end;
-      padding-right: calc(110px - 2vw);
       transition: all 0.4s ease-in-out;
+
+      @include mq(xl) {
+        display: flex;
+      }
+
+      @include mq(xxl) {
+        padding-right: calc(110px - 2vw);
+      }
 
       .menu {
         display: flex;
@@ -145,9 +254,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 32px 2vw 10px;
+            padding: 32px 1.4vw 10px;
             position: relative;
             color: $white;
+
+            @include mq(xxl) {
+              padding: 32px 2vw 10px;
+            }
 
             &::before {
               content: "";
@@ -238,25 +351,29 @@
 
     .logo {
       .m-logo {
-        height: 60px;
+        height: 50px;
         width: auto;
         margin: 0;
+
+        @include mq(md) {
+          height: 60px;
+        }
       }
     }
 
     .right--nav {
       flex-direction: row-reverse;
-    }
-    .top--nav {
-      border: none;
-      .social-icons,
-      .address--nav,
-      .button--area {
-        display: none !important;
-      }
+      .top--nav {
+        border: none;
+        .social-icons,
+        .address--nav,
+        .button--area {
+          display: none !important;
+        }
 
-      .phone--nav {
-        height: 81px;
+        .phone--nav {
+          height: 81px;
+        }
       }
     }
     .bottom-nav {
@@ -266,7 +383,11 @@
       .menu {
         > li.menu-item {
           a {
-            padding: 25px 2vw;
+            padding: 25px 1vw;
+
+            @include mq(xxl) {
+              padding: 25px 2vw;
+            }
 
             &::before {
               bottom: 15px;

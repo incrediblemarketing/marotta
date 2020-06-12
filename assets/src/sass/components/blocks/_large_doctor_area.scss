@@ -1,5 +1,5 @@
 .block--large_doctor_area {
-  padding-bottom: 157px;
+  padding: 0 15px 80px;
   background: linear-gradient(
     to bottom,
     $white 0%,
@@ -9,6 +9,10 @@
   );
   position: relative;
   z-index: 0;
+
+  @include mq(md) {
+    padding: 0 0 157px;
+  }
 
   &::before {
     content: url("/wp-content/uploads/2020/06/m-logo-1.png");

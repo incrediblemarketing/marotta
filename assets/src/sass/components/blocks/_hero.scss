@@ -4,8 +4,13 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 175px;
+  padding-bottom: 9vw;
   z-index: 0;
+  max-height: 700px;
+
+  @include mq(xl) {
+    max-height: unset;
+  }
 
   video {
     @include absolute_cover();
@@ -23,7 +28,13 @@
     color: $white;
     font-style: normal;
     font-weight: normal;
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 1em;
+    @include mq(md) {
+      font-size: 3rem;
+    }
+    @include mq(xl) {
+      font-size: 4rem;
+    }
   }
 }

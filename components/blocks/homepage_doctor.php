@@ -24,12 +24,12 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
 
 <div class="container">
   <div class="row">
-		<div class="col-xl-5 align-items-center d-flex">
+		<div class="col-xl-5 col-lg-6 col-12 d-flex">
 			<?php if ( $doc_image ) : ?>
 				<img src="<?php echo $doc_image['sizes']['parent_thumb']; ?>" class="doc-image" alt="<?php echo $doc_image['alt']; ?>" />
 			<?php endif; ?>
 		</div>
-		<div class="col-xl-7">
+		<div class="col-xl-7 col-lg-6 col-12">
 				<div class="number--area">
 					<div class="number--item">
 						<span class="number">

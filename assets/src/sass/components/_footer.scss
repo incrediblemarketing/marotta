@@ -18,8 +18,11 @@
 
 .block--info_area {
   position: relative;
-  min-height: 800px;
   z-index: 1;
+
+  @include mq(md) {
+    min-height: 800px;
+  }
 
   .image__holder {
     @include absolute_cover;
@@ -33,11 +36,23 @@
   .content--area {
     background: $white;
     border-radius: 10px;
-    width: 400px;
-    margin-left: 245px;
+    width: 300px;
+    margin-left: 15px;
     position: relative;
-    top: 105px;
+    top: 80px;
     box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
+
+    @include mq(md) {
+      top: 105px;
+    }
+
+    @include mq(lg) {
+      width: 400px;
+      margin-left: 4vw;
+    }
+    @include mq(xl) {
+      margin-left: 13vw;
+    }
 
     .address--area,
     .phone--area {
@@ -50,7 +65,11 @@
         width: 100%;
         font-size: 1.33rem;
         line-height: 1em;
-        margin-top: 79px;
+        margin-top: 50px;
+
+        @include mq(md) {
+          margin-top: 79px;
+        }
       }
 
       p {
@@ -71,15 +90,26 @@
       }
     }
     .address--area {
-      padding: 35px 55px;
       border-bottom: 2px solid #f2f2f2;
+      padding: 20px 25px;
+
+      @include mq(md) {
+        padding: 35px 55px;
+      }
     }
 
     .phone--area {
-      padding: 22px 55px 65px 55px;
+      padding: 20px 25px;
+      @include mq(md) {
+        padding: 22px 55px 65px 55px;
+      }
 
       .btn--teal {
-        margin-top: 170px;
+        margin-top: 50px;
+
+        @include mq(md) {
+          margin-top: 170px;
+        }
       }
 
       p {
@@ -120,11 +150,18 @@
   }
 
   h3 {
-    font-size: 3.61rem;
+    font-size: 2rem;
     line-height: 1.1em;
     margin-bottom: 25px;
     color: $white;
     font-weight: normal;
+
+    @include mq(md) {
+      font-size: 2.61rem;
+    }
+    @include mq(xl) {
+      font-size: 3.61rem;
+    }
   }
 
   .gform_wrapper {
@@ -132,21 +169,33 @@
 
     form {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr;
       grid-gap: 25px;
       align-items: flex-end;
+
+      @include mq(md) {
+        grid-template-columns: 1fr auto;
+      }
     }
     .gform_body {
       ul.gform_fields {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-gap: 22px 36px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 15px;
+
+        @include mq(md) {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-gap: 22px 36px;
+        }
 
         #field_1_4 {
-          grid-row-start: 1;
-          grid-column-start: 2;
-          grid-row-end: 4;
+          @include mq(md) {
+            grid-row-start: 1;
+            grid-column-start: 2;
+            grid-row-end: 4;
+          }
         }
 
         li.gfield {
@@ -182,7 +231,7 @@
 }
 
 footer {
-  padding: 45px 0 60px;
+  padding: 45px 15px 60px;
   text-align: center;
   font-size: 16px;
   line-height: 21px;

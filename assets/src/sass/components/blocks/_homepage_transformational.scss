@@ -1,43 +1,73 @@
 .block--homepage_transformational {
-  padding: 194px 0 167px;
+  padding: 80px 15px;
   background: #f9f9f9;
   position: relative;
 
+  @include mq(md) {
+    padding: 194px 0 167px;
+  }
+
   .background--image {
-    margin: 98px 0 102px 80px;
+    margin: 80px 0 80px 8px;
     background: #ffffff;
     box-shadow: 0px 25px 75px rgba(0, 36, 128, 0.2);
     border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - 80px);
-    height: calc(100% - 178px);
+    width: calc(100% - 8px);
+    height: calc(100% - 160px);
+
+    @include mq(lg) {
+      margin: 98px 0 80px 4vw;
+      width: calc(100% - 4vw);
+      height: calc(100% - 178px);
+    }
 
     img {
       position: absolute;
-      right: 0;
+      right: -66vw;
       top: 0;
       height: 100%;
       width: auto;
+
+      @include mq(lg) {
+        right: 0;
+      }
     }
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 1em;
-    color: #e1e1e1;
+    color: rgba($charcoal, 0.5);
     position: relative;
-    left: -100px;
+    left: 0px;
     font-weight: normal;
-    margin-bottom: 116px;
+    margin-bottom: 50px;
+
+    @include mq(lg) {
+      color: #e1e1e1;
+      left: -100px;
+      margin-bottom: 116px;
+    }
+
+    @include mq(md) {
+      font-size: 3rem;
+    }
+    @include mq(xl) {
+      font-size: 4rem;
+    }
 
     span {
       display: block;
-      left: 100px;
+      left: 30px;
       font-size: 1.72em;
       color: $primary;
       position: relative;
+      @include mq(lg) {
+        left: 100px;
+      }
     }
   }
 
@@ -69,11 +99,22 @@
   .section--titles {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include mq(xl) {
+      justify-content: space-between;
+    }
 
     .item {
       font-size: 1rem;
       position: relative;
+      margin: 0 15px 20px;
+      text-align: center;
+
+      @include mq(xl) {
+        margin: 0 5px 20px;
+      }
 
       &.active {
         color: $primary;
@@ -94,19 +135,44 @@
 
   .transform--gallery {
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+
+    @include mq(lg) {
+      align-items: flex-end;
+    }
 
     .gallery--item {
       position: relative;
 
       img {
         box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
+        max-width: 56vw;
+        height: auto;
+
+        @include mq(lg) {
+          max-width: 29vw;
+        }
+
+        @include mq(xxl) {
+          max-width: 100%;
+        }
       }
 
       &:first-child {
         position: relative;
-        left: -152px;
+        right: 15vw;
         z-index: 0;
         margin-bottom: -46px;
+
+        @include mq(md) {
+          right: 6vw;
+        }
+        @include mq(xxl) {
+          right: 6vw;
+        }
       }
       &:last-child {
         text-align: right;

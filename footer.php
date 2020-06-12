@@ -47,7 +47,7 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 px-0">
 				<div class="content--area">
 					<div class="address--area">
 						<?php if ( $address_link && $address && $address2 ) : ?>

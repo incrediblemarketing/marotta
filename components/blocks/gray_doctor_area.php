@@ -28,7 +28,7 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-xl-7">
+		<div class="col-xl-7 col-lg-6 col-md-8">
 				<div class="number--area">
 					<div class="number--item">
 						<span class="number">

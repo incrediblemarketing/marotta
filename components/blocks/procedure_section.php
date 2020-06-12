@@ -23,12 +23,12 @@ $section_title = get_sub_field( 'title' );
 		</div>
 		<div class="col-12 procedure--select-area">
 			<div class="row">
-				<div class="col-xl-5">
+				<div class="col-xl-5 col-lg-5 col-md-4 col-12">
 					<div class="image__holder">
 						<img src="" />
 					</div>
 				</div>
-				<div class="col-xl-7">
+				<div class="col-xl-7 col-lg-7 col-md-8 col-12">
 					<?php
 					$args = array(
 						'post_type'      => 'procedure',
@@ -39,17 +39,17 @@ $section_title = get_sub_field( 'title' );
 					);
 
 					$procedures = new WP_Query( $args );
-					$counter = 0;
+					$counter    = 0;
 					if ( $procedures->have_posts() ) :
 						echo '<div class="top-procedures">';
 						while ( $procedures->have_posts() ) :
 							$procedures->the_post();
-							if($counter < 1) :
+							if ( $counter < 1 ) :
 								$active = 'active';
 							else :
 								$active = '';
-							endif; 
-							echo '<div class="procedure--item '.$active.'" data-image="' . get_the_post_thumbnail_url( $post->ID ) . '">';
+							endif;
+							echo '<div class="procedure--item ' . $active . '" data-image="' . get_the_post_thumbnail_url( $post->ID ) . '">';
 								echo '<a href="' . esc_url( get_the_permalink() ) . '">' . esc_attr( get_the_title() ) . '</a>';
 								$args2 = array(
 									'post_type'      => 'procedure',

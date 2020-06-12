@@ -1,19 +1,34 @@
 .block--homepage_testimonial {
-  padding: 125px 0;
+  padding: 80px 15px;
+
+  @include mq(md) {
+    padding: 125px 0;
+  }
 
   h2 {
     font-style: normal;
     font-weight: normal;
-    font-size: 4rem;
+    font-size: 2.2rem;
     line-height: 1em;
     color: #e1e1e1;
     margin-bottom: 50px;
+
+    @include mq(md) {
+      font-size: 3rem;
+    }
+    @include mq(xl) {
+      font-size: 4rem;
+    }
   }
 
   .quote {
     display: block;
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+
+    @include mq(lg) {
+      margin-bottom: 100px;
+    }
 
     &::before {
       content: "\f10e";
@@ -64,7 +79,7 @@
     .review--item {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: 70px auto;
       grid-gap: 10px;
       align-items: center;
       justify-content: center;
@@ -72,31 +87,66 @@
       img {
         display: block;
         margin: 0 auto;
+        max-width: 100%;
+        height: auto;
       }
     }
   }
 
-  .insta--gallery {
+  .insta--gallery,
+  .eapps-instagram-feed-posts-view.eui-slider-slide {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 35px;
 
-    .gallery--item {
-      img {
-        box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
+    @include mq(lg) {
+      padding-top: 0;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .gallery--item,
+    .eapps-instagram-feed-posts-item-template-tile {
+      width: 40vw !important;
+      box-shadow: 0px 5px 11px rgba(17, 21, 70, 0.25);
+
+      @include mq(md) {
+        width: 31vw !important;
       }
+      @include mq(md) {
+        width: 28vw !important;
+      }
+      @include mq(lg) {
+        width: 300px !important;
+      }
+
       &:first-child {
-        text-align: right;
-        margin-right: 10px;
-        margin-bottom: -34px;
+        margin-top: 10px !important;
+        margin-right: -54px !important;
         z-index: 2;
+
+        @include mq(lg) {
+          margin-right: 10px !important;
+          margin-bottom: -34px !important;
+        }
       }
       &:nth-child(2) {
-        margin-bottom: -204px;
+        margin-top: 40px !important;
+        margin-right: -54px !important;
         z-index: 1;
+
+        @include mq(lg) {
+          margin-bottom: -204px !important;
+          margin-right: 169px !important;
+        }
       }
       &:last-child {
-        text-align: right;
         z-index: 0;
+      }
+
+      &:hover {
+        z-index: 3 !important;
       }
     }
   }

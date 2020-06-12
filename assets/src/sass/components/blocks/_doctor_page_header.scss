@@ -1,17 +1,37 @@
 .block--doctor_page_header {
   position: relative;
-  height: 100vh;
   display: flex;
-  align-items: flex-end;
   z-index: 1;
+  flex-direction: column;
+
+  @include mq(md) {
+    height: 100vh;
+    align-items: flex-end;
+    max-height: 600px;
+    flex-direction: row;
+  }
+
+  @include mq(lg) {
+    max-height: 700px;
+  }
+  @include mq(xl) {
+    max-height: unset;
+  }
 
   .image__holder {
-    @include absolute_cover;
+    position: relative;
     z-index: 0;
-    img {
+    @include mq(md) {
       @include absolute_cover;
+    }
+    img {
+      width: 100%;
+      height: auto;
       object-fit: cover;
       z-index: 1;
+      @include mq(md) {
+        @include absolute_cover;
+      }
     }
 
     &::after {
@@ -23,18 +43,38 @@
 
   .content--area {
     position: relative;
-    bottom: -149px;
-    text-align: center;
-    padding: 55px 100px;
+    padding: 35px 15px;
     background: $white;
-    border-radius: 10px;
-    box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
+
+    @include mq(md) {
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
+      bottom: -200px;
+      padding: 25px 25px;
+    }
+
+    @include mq(lg) {
+      bottom: -149px;
+      padding: 35px 50px;
+    }
+    @include mq(xl) {
+      padding: 45px 70px;
+    }
+    @include mq(xxl) {
+      padding: 55px 100px;
+    }
 
     h1 {
       color: $primary;
-      margin-bottom: 50px;
-      font-size: 2.33rem;
+      margin-bottom: 35px;
+      font-size: 2rem;
       line-height: 1.28em;
+
+      @include mq(md) {
+        font-size: 2.33rem;
+        margin-bottom: 50px;
+      }
     }
 
     .btn--primary {

@@ -1,20 +1,36 @@
 .block--procedure_section {
-  padding: 96px 0 73px;
-  min-height: 1040px;
+  padding: 75px 15px;
+
+  @include mq(md) {
+    padding: 96px 0 73px;
+    min-height: 1040px;
+  }
 
   .procedure--title-area {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 42px;
+    flex-direction: column;
+
+    @include mq(md) {
+      align-items: flex-end;
+      flex-direction: row;
+    }
 
     h2 {
       font-style: normal;
       font-weight: normal;
-      font-size: 4rem;
+      font-size: 2rem;
       line-height: 1em;
       text-transform: uppercase;
       color: #e1e1e1;
+
+      @include mq(md) {
+        font-size: 3rem;
+      }
+      @include mq(xl) {
+        font-size: 4rem;
+      }
     }
 
     .btn--teal {
@@ -41,26 +57,41 @@
 
       .procedure--item {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         position: relative;
 
+        @include mq(md) {
+          flex-direction: row;
+        }
+
         > a {
-          width: 250px;
+          width: 100%;
           font-size: 2.3rem;
           line-height: 2em;
           text-transform: capitalize;
           color: #e1e1e1;
           z-index: 0;
+          padding: 0 15px;
+
+          @include mq(md) {
+            width: 250px;
+            padding: unset;
+          }
 
           &::before {
             content: "";
             display: block;
-            width: calc(100% + 60px);
-            left: -60px;
+            width: 100%;
+            left: 0;
             height: 100%;
             position: absolute;
             top: 0;
             z-index: -1;
+
+            @include mq(md) {
+              width: calc(100% + 60px);
+              left: -60px;
+            }
           }
         }
 
@@ -83,12 +114,27 @@
             background: #f1f1f1;
             display: flex;
             flex-direction: column;
-            padding: 15px 86px;
+            padding: 15px 25px;
+            min-width: 100%;
             z-index: 9;
-            min-width: 470px;
-            position: absolute;
+            position: relative;
             top: 0;
             right: 0;
+
+            @include mq(md) {
+              min-width: 300px;
+              position: absolute;
+            }
+
+            @include mq(lg) {
+              padding: 15px 45px;
+              min-width: 390px;
+            }
+
+            @include mq(xl) {
+              padding: 15px 86px;
+              min-width: 470px;
+            }
 
             a {
               font-size: 1.33rem;

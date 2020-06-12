@@ -1,5 +1,9 @@
 .block--single_gallery {
-  padding: 88px 0 121px;
+  padding: 80px 15px;
+
+  @include mq(md) {
+    padding: 88px 0 121px;
+  }
 
   h2 {
     margin-bottom: -35px;
@@ -11,10 +15,21 @@
   }
 
   .gallery-container {
-    padding: 60px 0;
+    padding: 60px 0 10px;
+
+    @include mq(md) {
+      padding: 60px 0;
+    }
 
     .swiper--nav {
       z-index: 1;
+      @include mq($until: md) {
+        position: relative;
+        display: block;
+        height: 50px;
+        width: 130px;
+        margin: 12px auto;
+      }
       .swiper-button-prev,
       .swiper-button-next {
         background: $primary;
@@ -52,7 +67,10 @@
   }
 
   .gallery-thumb {
-    padding-bottom: 60px;
+    padding-bottom: 20px;
+    @include mq(md) {
+      padding-bottom: 60px;
+    }
     .swiper-slide {
       box-shadow: 0 25px 75px rgba(17, 21, 70, 0.25);
     }

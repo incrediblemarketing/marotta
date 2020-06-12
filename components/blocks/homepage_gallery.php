@@ -19,7 +19,7 @@ $gallery_item = get_sub_field( 'gallery_item' );
 		<div class="col-12">
 			<h2>Before <small>&</small> After</h2>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-lg-6">
 			<?php
 				$terms   = get_terms(
 					array(
@@ -45,9 +45,9 @@ $gallery_item = get_sub_field( 'gallery_item' );
 					);
 					?>
 					<div class="child--terms <?php echo esc_attr( $active ); ?>">
-						<?php foreach ( $terms2 as $term1 ) : ?>
+					<?php foreach ( $terms2 as $term1 ) : ?>
 							<div class="child--item">
-								<a href="<?php echo esc_url( get_term_link( $term1 ) ); ?>" ><?php echo $term1->name; ?></a>
+								<a href="<?php echo get_term_link( $term1 ); ?>" ><?php echo $term1->name; ?></a>
 							</div>
 					<?php endforeach; ?>
 					</div>
@@ -55,7 +55,7 @@ $gallery_item = get_sub_field( 'gallery_item' );
 					<?php $counter++; ?>
 			<?php endforeach; ?>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-lg-6">
 			<?php
 			if ( $gallery_item ) :
 				$counter = 0;

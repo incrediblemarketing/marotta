@@ -21,7 +21,7 @@ $reviews     = get_sub_field( 'review_area' );
 
 <div class="container">
   <div class="row">
-		<div class="col-xl-6">
+		<div class="col-lg-6">
 			<h2><?php echo esc_attr( $block_title ); ?></h2>
 			<?php
 			if ( $testimonial ) :
@@ -57,16 +57,8 @@ $reviews     = get_sub_field( 'review_area' );
 				</div>
 			<?php endif; ?>
 		</div>
-		<div class="col-xl-5 offset-xl-1">
-			<?php if ( $gallery ) : ?>
-					<div class="insta--gallery">
-						<?php foreach ( $gallery as $image ) : ?>
-							<div class="gallery--item">
-								<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-							</div>
-						<?php endforeach; ?>
-					</div>
-				<?php endif; ?>
+		<div class="col-xl-5 offset-xl-1 col-lg-6">
+			<?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
 		</div>
   </div>
 </div>

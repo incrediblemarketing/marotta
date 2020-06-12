@@ -7,6 +7,11 @@
     img {
       @include absolute_cover;
       object-fit: cover;
+      object-position: right;
+
+      @include mq(md) {
+        object-position: left;
+      }
     }
   }
 
@@ -17,16 +22,39 @@
   .content--area {
     background: $primary;
     color: $white;
-    padding: 117px 142px 121px 165px;
-    width: 573px;
-    margin-left: 72px;
+    padding: 40px 15px;
+    max-width: 55vw;
+
+    @include mq(sm) {
+      padding: 6vw 5vw;
+      max-width: 45vw;
+    }
+
+    @include mq(lg) {
+      padding: 6vw 5vw;
+      max-width: 35vw;
+      margin-left: 4vw;
+    }
+
+    @include mq(xxl) {
+      padding: 6vw 5vw 6vw 8vw;
+      max-width: 30vw;
+      margin-left: 72px;
+    }
 
     h2 {
-      font-size: 4rem;
+      font-size: 2rem;
       font-weight: normal;
       line-height: 1em;
       margin-bottom: 50px;
       color: $white;
+
+      @include mq(md) {
+        font-size: 3rem;
+      }
+      @include mq(xl) {
+        font-size: 4rem;
+      }
     }
 
     p {

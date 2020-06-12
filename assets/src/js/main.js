@@ -27,17 +27,33 @@
           this.galleryBuilder();
 					this.swiperSetup();
 					this.homeProcedure();
+					this.homepageGalleryToggle();
+				},
+				homepageGalleryToggle: function(){
+					$('h3[data-toggle="gallery--toggle"]').on('click', function(){
+						$('.term--area .child--terms').removeClass('active');
+						$(this).next('.child--terms').addClass('active');
+					});
 				},
 				homeProcedure: function() {
 					var $featured_image = $('.procedure--item.active').attr('data-image');
 					$('.procedure--select-area .image__holder img').attr('src', $featured_image);
 
-					$('.procedure--item').on('hover',function(){
-						var $featured_image = $(this).attr('data-image');
-						$('.procedure--select-area .image__holder img').attr('src', $featured_image);
-						$('.procedure--item').removeClass('active');
-						$(this).addClass('active');
-					});
+					if(window.outerWidth > 580){
+						$('.procedure--item').on('hover',function(){
+							var $featured_image = $(this).attr('data-image');
+							$('.procedure--select-area .image__holder img').attr('src', $featured_image);
+							$('.procedure--item').removeClass('active');
+							$(this).addClass('active');
+						});
+					}else{
+						$('.procedure--item').on('click',function(e){
+							e.preventDefault();
+							var $featured_image = $(this).attr('data-image');
+							$('.procedure--select-area .image__holder img').attr('src', $featured_image);
+							$(this).toggleClass('active');
+						});
+					}
 				},
         siteNavSticky: function() {
           $cache.window.scroll(function() {

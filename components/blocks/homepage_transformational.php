@@ -23,7 +23,7 @@ $bg_image      = get_sub_field( 'background_image' );
 </div>
 <div class="container">
   <div class="row">
-		<div class="col-xl-5">
+		<div class="col-xxl-5 col-lg-6">
 		<?php if ( $gallery ) : ?>
 					<div class="transform--gallery">
 						<?php foreach ( $gallery as $image ) : ?>
@@ -34,7 +34,7 @@ $bg_image      = get_sub_field( 'background_image' );
 					</div>
 				<?php endif; ?>
 		</div>
-		<div class="col-xl-7">
+		<div class="col-xxl-7 col-lg-6">
 			<h2><?php echo $section_title; ?></h2>
 			<?php if ( have_rows( 'content' ) ) : ?>
 				<?php $counter = 0; ?>

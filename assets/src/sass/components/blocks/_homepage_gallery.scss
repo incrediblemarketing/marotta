@@ -1,12 +1,26 @@
 .block--homepage_gallery {
-  padding: 87px 0 141px;
+  padding: 87px 15px;
+
+  @include mq(lg) {
+    padding: 80px 0;
+  }
+  @include mq(lg) {
+    padding: 87px 0 141px;
+  }
 
   h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 1.27em;
     color: $primary;
     margin-bottom: 50px;
     font-weight: normal;
+
+    @include mq(md) {
+      font-size: 3rem;
+    }
+    @include mq(xl) {
+      font-size: 4rem;
+    }
 
     small {
       font-style: italic;
@@ -23,6 +37,7 @@
     color: $primary;
     font-weight: normal;
     margin-bottom: 15px;
+    cursor: pointer;
 
     &::after {
       content: "";

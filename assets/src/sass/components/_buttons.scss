@@ -36,9 +36,13 @@
 }
 
 .btn--teal {
-  font-size: 1.77rem;
+  font-size: 1.2rem;
   line-height: 1rem;
   color: $primary;
+
+  @include mq(xl) {
+    font-size: 1.77rem;
+  }
 
   i {
     position: relative;

@@ -74,3 +74,35 @@ if ( ! function_exists( 'im_register_galleries' ) ) {
 	add_action( 'init', 'im_register_galleries', 0 );
 
 }
+
+function cptui_register_my_taxes_procedure_type() {
+
+	/**
+	 * Taxonomy: Procedure Type.
+	 */
+
+	$labels = [
+		"name" => __( "Procedure Type", "custom-post-type-ui" ),
+		"singular_name" => __( "Procedure Type", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Procedure Type", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'procedure_type', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "procedure_type",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+		];
+	register_taxonomy( "procedure_type", [ "gallery" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_procedure_type' );
