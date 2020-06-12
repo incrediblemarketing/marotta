@@ -7,6 +7,7 @@
     $white 100%
   );
   color: $white;
+  padding: 0 15px;
 
   .content--top {
     z-index: 1;
@@ -15,13 +16,19 @@
   .map--area {
     z-index: 0;
     padding: 0;
+    max-width: 100%;
+    height: auto;
   }
 
   .content--area {
     padding-top: 78px;
-    font-size: 1.777rem;
     line-height: 1.5em;
     color: $white;
+    font-size: 1.2rem;
+
+    @include mq(xl) {
+      font-size: 1.777rem;
+    }
 
     a {
       color: $white;
@@ -36,7 +43,11 @@
         font-size: 22px;
         position: absolute;
         left: 0;
-        top: 13px;
+        top: 5px;
+
+        @include mq(xl) {
+          top: 13px;
+        }
       }
     }
   }
@@ -51,15 +62,30 @@
     background: $white;
     border-radius: 10px;
     box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
-    padding: 35px 36px 56px;
-    margin-bottom: -198px;
+    padding: 25px 25px;
+    margin-bottom: 35px;
     z-index: 9;
 
+    @include mq(sm) {
+      margin-bottom: -80px;
+    }
+    @include mq(md) {
+      margin-bottom: -198px;
+      padding: 35px 36px 56px;
+    }
+
     h2 {
-      font-size: 4rem;
+      font-size: 2rem;
       font-weight: normal;
       line-height: 1.27em;
       margin-bottom: 22px;
+
+      @include mq(md) {
+        font-size: 3rem;
+      }
+      @include mq(xl) {
+        font-size: 4rem;
+      }
     }
 
     .gform_wrapper {
@@ -70,7 +96,11 @@
       }
       ul.gform_fields {
         li.gfield {
-          margin: 0 0 40px;
+          margin: 0 0 20px;
+
+          @include mq(lg) {
+            margin: 0 0 40px;
+          }
 
           input,
           textarea {
@@ -154,22 +184,32 @@
 
     .btn--primary {
       border: none;
+      max-width: 100%;
     }
   }
 
   .social-icons {
     justify-content: space-between;
     padding-right: 30px;
-    margin-top: 100px;
+    margin-top: 50px;
+
+    @include mq(md) {
+      margin-top: 100px;
+    }
 
     li {
       a {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 75px;
-        width: 75px;
+        height: 50px;
+        width: 50px;
         transition: all 0.3s ease-in-out;
+
+        @include mq(xl) {
+          height: 75px;
+          width: 75px;
+        }
 
         &:hover {
           background: $white;
@@ -186,15 +226,26 @@
     h2 {
       text-align: center;
       margin-bottom: 39px;
-      font-size: 4rem;
+      font-size: 2rem;
       line-height: 1.3em;
       font-weight: normal;
+
+      @include mq(md) {
+        font-size: 3rem;
+      }
+      @include mq(xl) {
+        font-size: 4rem;
+      }
     }
 
     h3 {
       font-weight: normal;
-      font-size: 1.77rem;
+      font-size: 1.2rem;
       margin-bottom: 25px;
+
+      @include mq(md) {
+        font-size: 1.77rem;
+      }
     }
   }
 }

@@ -25,7 +25,7 @@ $direction_right = get_sub_field( 'direction_right' );
 
 <div class="container content--top">
 	<div class="row">
-		<div class="col-xl-4">
+		<div class="col-xl-4 col-lg-5 col-md-5">
 			<div class="content--area">
 					<div class="address--area">
 						<?php if ( $address_link && $address && $address2 ) : ?>
@@ -41,7 +41,7 @@ $direction_right = get_sub_field( 'direction_right' );
 					<?php get_template_part( 'components/social-icons' ); ?>
 				</div>
 		</div>
-		<div class="col-xl-8">
+		<div class="col-xl-8 col-lg-7 col-md-7">
 			<div class="form--area">
 				<h2>Book a Consultation</h2>
 				<?php echo do_shortcode( '[gravityforms id="2" title="false" description="false" ajax="true"]' ); ?>

@@ -401,6 +401,13 @@
 
 body.tax-procedure_type {
   .site-nav {
+    button {
+      border-color: $black;
+
+      span {
+        background: $black;
+      }
+    }
     .logo {
       .m-logo {
         filter: none;
@@ -414,7 +421,9 @@ body.tax-procedure_type {
         }
       }
       .top--nav {
-        border-bottom: 1px solid $black;
+        @include mq(xl) {
+          border-bottom: 1px solid $black;
+        }
 
         .phone--nav {
           color: $black;
@@ -466,6 +475,13 @@ body.tax-procedure_type {
               }
             }
           }
+        }
+      }
+      button {
+        border-color: $white;
+
+        span {
+          background: $white;
         }
       }
     }

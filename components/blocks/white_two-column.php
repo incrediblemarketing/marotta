@@ -24,10 +24,10 @@ $content2      = get_sub_field( 'content_2' );
 			</div>
 			<div class="col-xl-6"></div>
 		<?php endif; ?>
-		<div class="col-xl-6">
+		<div class="col-lg-6">
 			<?php echo $content; ?>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-lg-6 content_2">
 			<?php echo $content2; ?>
 		</div>
 	</div>

@@ -69,7 +69,11 @@ a {
 h2 {
   font-style: normal;
   font-weight: normal;
-  font-size: 2.33rem;
+  font-size: 2rem;
   line-height: 1.28em;
   color: $primary;
+
+  @include mq(md) {
+    font-size: 2.33rem;
+  }
 }

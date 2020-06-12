@@ -24,10 +24,10 @@ $right = get_sub_field( 'right_column' );
 			</div>
 			<h1><?php echo esc_attr( $title ? $title : get_the_title() ); ?></h1>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-lg-6">
 			<?php echo $left; ?>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-lg-6 content_2">
 			<?php echo $right; ?>
 		</div>
 	</div>

@@ -17,7 +17,7 @@
 
 <?php if ( $older_link || $newer_link ) : ?>
 	<nav class="d-flex align-items-center navigation navigation-single">
-		<?php echo esc_html( $newer_link ); ?>
-		<?php echo esc_html( $older_link ); ?>
+		<?php echo $newer_link; ?>
+		<?php echo $older_link; ?>
 	</nav>
 <?php endif; ?>

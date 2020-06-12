@@ -1,5 +1,15 @@
 .block--team_list {
-  padding: 258px 0 232px;
+  padding: 80px 15px;
+
+  @include mq(md) {
+    padding: 150px 0;
+  }
+  @include mq(xl) {
+    padding: 200px 0;
+  }
+  @include mq(xxl) {
+    padding: 258px 0 232px;
+  }
 
   h2 {
     font-style: normal;
@@ -14,8 +24,15 @@
 
   .team--grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 289px);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 4px;
+
+    @include mq(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mq(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     .single--staff {
       position: relative;
@@ -37,15 +54,25 @@
       }
       .staff--content {
         position: absolute;
-        bottom: 30px;
-        left: 30px;
-        width: calc(100% - 60px);
+        bottom: 15px;
+        left: 15px;
+        width: calc(100% - 30px);
+
+        @include mq(md) {
+          bottom: 30px;
+          left: 30px;
+          width: calc(100% - 60px);
+        }
       }
 
       h3 {
-        font-size: 1.33rem;
+        font-size: 1.1rem;
         line-height: 1.25em;
         margin: 0;
+
+        @include mq(md) {
+          font-size: 1.33rem;
+        }
       }
 
       p {

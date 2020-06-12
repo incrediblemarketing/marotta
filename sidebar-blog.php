@@ -13,6 +13,7 @@
 
 ?>
 <aside class="sidebar sidebar-blog">
+	<h2>Filters</h2>
 	<?php if ( is_active_sidebar( 'sidebar_blog' ) ) : ?>
 		<?php dynamic_sidebar( 'sidebar_blog' ); ?>
 	<?php endif; ?>

@@ -1,5 +1,9 @@
 .block--full_gallery {
-  padding-bottom: 90px;
+  padding: 0 15px 90px;
+
+  @include mq(md) {
+    padding: 0 0 90px;
+  }
   h2 {
     border-bottom: 1px solid $primary;
     color: $primary;
@@ -38,7 +42,7 @@
     }
 
     .child--terms {
-      column-count: 2;
+      column-count: 1;
       column-gap: 30px;
 
       @include mq(md) {
@@ -245,7 +249,9 @@
   }
 
   .filters {
-    margin-top: 85px;
+    @include mq(xl) {
+      margin-top: 85px;
+    }
   }
 
   h4 {

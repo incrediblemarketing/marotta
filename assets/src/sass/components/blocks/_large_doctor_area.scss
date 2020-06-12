@@ -3,14 +3,21 @@
   background: linear-gradient(
     to bottom,
     $white 0%,
-    $white 35%,
-    $primary 35%,
+    $white 23%,
+    $primary 23%,
     $primary 100%
   );
   position: relative;
   z-index: 0;
 
   @include mq(md) {
+    background: linear-gradient(
+      to bottom,
+      $white 0%,
+      $white 35%,
+      $primary 35%,
+      $primary 100%
+    );
     padding: 0 0 157px;
   }
 
@@ -19,15 +26,24 @@
     z-index: -1;
     position: absolute;
     top: calc(35% + 68px);
-    right: 221px;
+    right: -21px;
     opacity: 0.15;
+
+    @include mq(md) {
+      right: 221px;
+    }
   }
 
   h3 {
-    font-size: 2.333rem;
+    font-size: 1.5rem;
     line-height: 1.28em;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     font-weight: normal;
+
+    @include mq(xl) {
+      margin-bottom: 50px;
+      font-size: 2.333rem;
+    }
   }
 
   .content--top {
@@ -38,12 +54,35 @@
   }
   .youtube--id {
     position: relative;
-    transform: translateY(-252px);
+    transform: translateY(-280px);
+
+    @include mq(sm) {
+      transform: translateY(-280px);
+    }
+    @include mq(md) {
+      transform: translateY(-24vw);
+    }
+    @include mq(lg) {
+      transform: translateY(-18vw);
+    }
+    @include mq(xl) {
+      transform: translateY(-12vw);
+    }
+    @include mq(xxl) {
+      transform: translateY(-9vw);
+    }
   }
 
   .content--middle {
-    margin-top: -60px;
+    margin-top: -200px;
     color: $white;
+
+    @include mq(sm) {
+      margin-top: -180px;
+    }
+    @include mq(md) {
+      margin-top: -60px;
+    }
 
     h3 {
       color: $white;
@@ -55,8 +94,18 @@
     background: $white;
     border-radius: 10px;
     box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
-    padding: 55px 100px;
+    padding: 25px;
     text-align: center;
+
+    @include mq(md) {
+      padding: 35px 50px;
+    }
+    @include mq(lg) {
+      padding: 45px 70px;
+    }
+    @include mq(xl) {
+      padding: 55px 100px;
+    }
 
     h2 {
       margin-bottom: 50px;
@@ -64,6 +113,7 @@
 
     .btn--primary {
       margin: 68px auto 0;
+      max-width: 100%;
     }
   }
 }

@@ -1,11 +1,27 @@
 .block--testimonial_area {
-  padding: 96px 0 93px;
+  padding: 80px 15px;
+
+  @include mq(md) {
+    padding: 96px 0 93px;
+  }
 
   h2 {
-    margin-left: 18.3vw;
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 1em;
-    max-width: 30vw;
+
+    @include mq(md) {
+      font-size: 3rem;
+      margin-left: 50px;
+      max-width: 50vw;
+    }
+    @include mq(xl) {
+      font-size: 4rem;
+      margin-left: 6vw;
+      max-width: 30vw;
+    }
+    @include mq(xxl) {
+      margin-left: 18.3vw;
+    }
   }
 
   .testimonial-container {
@@ -15,16 +31,23 @@
     .swiper-slide {
       background: $white;
       box-shadow: 0px 25px 75px rgba(17, 21, 70, 0.25);
-      padding: 60px 30px 46px 54px;
+      padding: 40px 30px;
       font-size: 1.11rem;
-      line-height: 2.1em;
+      line-height: 1.5em;
       text-transform: uppercase;
-      width: 670px;
+      width: 80vw;
       margin: 0 15px;
       display: flex;
       align-items: center;
       height: auto;
       border-radius: 10px;
+
+      @include mq(lg) {
+        width: 670px;
+        padding: 60px 30px 46px 54px;
+        font-size: 1.11rem;
+        line-height: 2.1em;
+      }
 
       .fa-quote-right {
         color: $primary;

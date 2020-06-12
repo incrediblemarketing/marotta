@@ -33,14 +33,14 @@
 					<?php while ( $staff->have_posts() ) : ?>
 						<?php $staff->the_post(); ?>
 						<div class="swiper-slide">
-							<div class="row">
-								<div class="col-xl-7">
+							<div class="row mobile-reverse">
+								<div class="col-xl-7 col-md-6">
 									<div class="content--area">
 										<h2><?php echo esc_attr( get_the_title() ); ?></h2>
 										<?php the_content(); ?>
 									</div>
 								</div>
-								<div class="col-xl-5">
+								<div class="col-xl-5 col-md-6">
 									<div class="image__holder">
 										<?php echo get_the_post_thumbnail( $post->ID, 'team_thumb' ); ?>
 									</div>
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 				<?php endwhile; ?>
-				<?php wp_reset_postdata(); ?>
+					<?php wp_reset_postdata(); ?>
 					</div>
 					<?php get_template_part( 'components/swiper-nav' ); ?>
 				</div>

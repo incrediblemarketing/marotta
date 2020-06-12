@@ -1,13 +1,29 @@
 .block--teal_two-column {
   background: $primary;
   color: $white;
-  padding: 110px 0;
+  padding: 80px 15px;
+
+  @include mq(md) {
+    padding: 110px 0;
+  }
 
   h2 {
     color: $white;
 
     &.mar-bot {
-      margin-bottom: 50px;
+      margin-bottom: 35px;
+
+      @include mq(md) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .content_2 {
+    margin-top: 25px;
+
+    @include mq(lg) {
+      margin-top: 0;
     }
   }
 }

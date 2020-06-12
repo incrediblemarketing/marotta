@@ -16,11 +16,11 @@ $youtube_id = get_sub_field( 'youtube_id' );
 
 <div class="container">
 	<div class="row align-items-end">
-		<div class="col-xl-5">
+		<div class="col-xl-5 col-md-6">
 			<h2>Testimonials</h2>
 			<a href="/testimonials/" class="btn--primary">Learn more <i class="fal fa-long-arrow-right"></i></a>
 		</div>
-		<div class="col-xl-7">
+		<div class="col-xl-7 col-md-6">
 			<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="//www.youtube.com/embed/<?php echo $youtube_id; ?>?rel=0" allowfullscreen></iframe>
 			</div>

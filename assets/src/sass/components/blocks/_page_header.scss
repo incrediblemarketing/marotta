@@ -3,7 +3,12 @@
   height: 800px;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 103px;
+  padding: 0 15px 9vw;
+  max-height: 100vh;
+
+  @include mq(md) {
+    padding: 0 0 9vw;
+  }
 
   .image__holder {
     @include absolute_cover;
@@ -16,7 +21,11 @@
       height: 100%;
       object-fit: cover;
       z-index: 1;
-      object-position: center;
+      object-position: 70%;
+
+      @include mq(md) {
+        object-position: center;
+      }
     }
 
     &::after {
@@ -27,13 +36,24 @@
   }
 
   .header--content {
-    margin-left: -75px;
+    margin-left: 0;
+
+    @include mq(xl) {
+      margin-left: -4vw;
+    }
 
     h4 {
-      font-size: 4rem;
+      font-size: 2rem;
       line-height: 1em;
       font-weight: normal;
       color: $white;
+
+      @include mq(md) {
+        font-size: 3rem;
+      }
+      @include mq(xl) {
+        font-size: 4rem;
+      }
     }
   }
 }
