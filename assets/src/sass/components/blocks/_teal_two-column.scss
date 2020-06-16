@@ -26,4 +26,35 @@
       margin-top: 0;
     }
   }
+
+  a {
+    color: $charcoal;
+    &:hover {
+      color: $white;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom: 35px;
+
+    li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 20px;
+
+      &::before {
+        content: "\f111";
+        font-size: 8px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: $fontawesome;
+        font-weight: 600;
+        color: $white;
+      }
+    }
+  }
 }

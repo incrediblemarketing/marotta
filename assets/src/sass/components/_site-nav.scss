@@ -139,7 +139,7 @@
           height: 128px;
         }
 
-        @include mq(xxl) {
+        @include mq(xxxl) {
           padding: 0 20px;
         }
 
@@ -171,7 +171,7 @@
           display: flex !important;
         }
 
-        @include mq(xxl) {
+        @include mq(xxxl) {
           padding: 0 24px;
         }
 
@@ -186,7 +186,7 @@
             transition: all 0.4s ease-in-out;
             background: transparent;
 
-            @include mq(xxl) {
+            @include mq(xxxl) {
               width: 50px;
             }
 
@@ -209,14 +209,14 @@
           border-image: linear-gradient(to bottom, transparent, $white) 1 100%;
         }
 
-        @include mq(xxl) {
+        @include mq(xxxl) {
           padding: 0 110px 0 40px;
         }
 
         .btn--primary {
           width: 290px;
 
-          @include mq(xxl) {
+          @include mq(xxxl) {
             width: 300px;
           }
         }
@@ -232,7 +232,7 @@
         display: flex;
       }
 
-      @include mq(xxl) {
+      @include mq(xxxl) {
         padding-right: calc(110px - 2vw);
       }
 
@@ -257,12 +257,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 32px 1.4vw 10px;
+            padding: 32px 12px 10px;
             position: relative;
             color: $white;
 
-            @include mq(xxl) {
-              padding: 32px 2vw 10px;
+            @include mq(xxxl) {
+              padding: 32px 1.5vw 10px;
             }
 
             &::before {
@@ -380,16 +380,16 @@
       }
     }
     .bottom-nav {
-      padding: 0;
+      padding: 0 !important;
       margin: 0 auto;
 
       .menu {
         > li.menu-item {
           a {
-            padding: 25px 1vw;
+            padding: 25px 7px;
 
             @include mq(xxl) {
-              padding: 25px 2vw;
+              padding: 25px 1.2vw;
             }
 
             &::before {

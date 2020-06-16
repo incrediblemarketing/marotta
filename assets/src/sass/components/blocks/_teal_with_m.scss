@@ -22,4 +22,15 @@
     top: -66px;
     opacity: 0.15;
   }
+
+  h2 {
+    color: $white;
+  }
+
+  a:not(.btn--primary) {
+    color: $charcoal;
+    &:hover {
+      color: $white;
+    }
+  }
 }
