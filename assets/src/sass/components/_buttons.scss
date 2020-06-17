@@ -10,9 +10,17 @@
   font-size: 1.3rem;
   line-height: 1em;
   font-weight: normal;
+  transition: all 0.4s ease-in-out;
 
   i {
     margin-left: 7px;
+  }
+
+  &:hover {
+    border-left: $charcoal 10px solid;
+    background: white;
+    color: $charcoal;
+    box-shadow: rgba($black, 0.1) -3px 3px 10px;
   }
 }
 
