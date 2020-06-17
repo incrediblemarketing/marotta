@@ -100,3 +100,52 @@
     }
   }
 }
+
+.block__testimonial {
+  background: $white;
+  padding: 15px;
+  border: 1px solid rgba($charcoal, 0.1);
+  text-align: left;
+  font-size: 1rem;
+  font-weight: normal;
+  border-radius: 10px;
+  margin-bottom: 35px;
+  color: $charcoal;
+  box-shadow: rgba($black, 0.15) 0 4px 10px;
+  @include mq(md) {
+    padding: 35px;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 1.4rem;
+  }
+}
+
+.mjRatingsListDetails {
+  background: transparent !important;
+  padding: 0;
+  text-align: left;
+  font-size: 1rem;
+
+  .mjReview {
+    background: $white;
+    padding: 15px !important;
+    border: 1px solid rgba($charcoal, 0.1);
+    text-align: left;
+    font-size: 1rem;
+    font-weight: normal;
+    border-radius: 10px;
+    margin-bottom: 35px !important;
+    color: $charcoal;
+    box-shadow: rgba($black, 0.15) 0 4px 10px;
+    @include mq(md) {
+      padding: 35px !important;
+    }
+
+    h3 {
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+  }
+}

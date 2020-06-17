@@ -36,6 +36,7 @@ $bg_image      = get_sub_field( 'background_image' );
 		</div>
 		<div class="col-xxl-7 col-lg-6">
 			<h2><?php echo $section_title; ?></h2>
+			<div class="block--area">
 			<?php if ( have_rows( 'content' ) ) : ?>
 				<?php $counter = 0; ?>
 				<?php
@@ -62,6 +63,7 @@ $bg_image      = get_sub_field( 'background_image' );
 							<?php $counter++; ?>
 					<?php endwhile; ?>
 				<?php endif; ?>
+			</div>
 		</div>
 		<div class="col-xl-12">
 		<?php if ( have_rows( 'content' ) ) : ?>

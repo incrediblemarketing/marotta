@@ -17,8 +17,8 @@
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 	<?php if ( $older_link || $newer_link ) : ?>
 		<nav class="d-flex align-items-center navigation navigation-loop">
-			<?php echo esc_html( $newer_link ); ?>
-			<?php echo esc_html( $older_link ); ?>
+			<?php echo $newer_link; ?>
+			<?php echo $older_link; ?>
 		</nav>
 	<?php endif; ?>
 <?php endif; ?>

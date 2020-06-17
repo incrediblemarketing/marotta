@@ -28,6 +28,16 @@
 					this.swiperSetup();
 					this.homeProcedure();
 					this.homepageGalleryToggle();
+					this.sectionSelect();
+				},
+				sectionSelect: function(){
+					$('.section--titles .item').on('click', function(){
+						$('.section--titles .item').removeClass('active');
+						$('.block--content').removeClass('active');
+						$(this).addClass('active');
+						var $block = $(this).attr('data-count');
+						$('.'+$block).addClass('active');
+					});
 				},
 				homepageGalleryToggle: function(){
 					$('h3[data-toggle="gallery--toggle"]').on('click', function(){
@@ -65,6 +75,17 @@
           });
         },
         mobileMenu: function() {
+					$('a').each(function() {
+						var a = new RegExp('/' + window.location.host + '/');
+						if(!a.test(this.href)) {
+								$(this).click(function(event) {
+										event.preventDefault();
+										event.stopPropagation();
+										window.open(this.href, '_blank');
+								});
+						}
+				 });
+				 
 					$(".bottom-nav .menu .sub-menu li.menu-item-has-children > a").after(
 						'<i class="fal fa-long-arrow-right"></i>'
 					);

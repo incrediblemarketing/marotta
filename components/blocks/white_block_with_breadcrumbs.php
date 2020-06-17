@@ -14,13 +14,25 @@
 $title = get_sub_field( 'title' );
 $left  = get_sub_field( 'left_column' );
 $right = get_sub_field( 'right_column' );
+global $post;
+
+$parentId     = $post->post_parent;
+$grandparentId     = $parentId->post_parent;
+
 ?>
 
 <div class="container">
 	<div class="row">
 		<div class="col-12">
 			<div class="breadcrumbs">
-				<?php echo breadcrumbs(); ?>
+				<a href="/">Home</a> / 
+				<?php if ( 0 !== $parentId->post_parent && 0 !== $parentId ) { ?>
+					<a href="<?php echo get_permalink( $grandparentId ); ?>"><?php echo get_the_title( $grandparentId ); ?></a> /
+				<?php } ?>
+				<?php if ( 0 !== $post->post_parent ) { ?>
+					<a href="<?php echo get_permalink( $parentId ); ?>"><?php echo get_the_title( $parentId ); ?></a> /
+				<?php } ?>
+				<span><?php echo esc_attr( $title ? $title : get_the_title() ); ?></span>
 			</div>
 			<h1><?php echo esc_attr( $title ? $title : get_the_title() ); ?></h1>
 		</div>

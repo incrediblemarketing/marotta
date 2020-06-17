@@ -20,6 +20,13 @@
     }
   }
 
+  .image__holder {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   h1 {
     font-size: 2.33rem;
     line-height: 1.28em;
@@ -58,9 +65,24 @@
     }
   }
 }
+.page-id-1922 {
+  .block--white_block_with_breadcrumbs {
+    padding-bottom: 0;
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
+.page-id-1982 {
+  .image__holder {
+    box-shadow: rgba($black, 0.1) 0 4px 10px;
+    margin-bottom: 30px;
+  }
+}
 
 .page-id-1639,
-.page-id-1920 {
+.page-id-1920,
+.page-id-3479 {
   .block--white_block_with_breadcrumbs {
     h1 {
       display: none;

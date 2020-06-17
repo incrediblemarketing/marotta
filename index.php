@@ -43,8 +43,8 @@ get_header(); ?>
 							<?php the_post(); ?>
 							<?php get_template_part( 'components/post-preview' ); ?>
 						<?php endwhile; ?> 
-						<?php get_template_part( 'components/navigation-loop' ); ?>
 					</div>
+					<?php get_template_part( 'components/navigation-loop' ); ?>
 				<?php else : ?>
 					<?php get_template_part( 'components/post-not-found' ); ?>
 				<?php endif; ?>

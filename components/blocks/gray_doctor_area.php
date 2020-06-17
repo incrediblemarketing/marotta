@@ -29,6 +29,7 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
 <div class="container">
 	<div class="row">
 		<div class="col-xl-7 col-lg-6 col-md-8">
+		<?php if($bc) :?>
 				<div class="number--area">
 					<div class="number--item">
 						<span class="number">
@@ -55,6 +56,7 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
 						<p>years of surgical experience</p>
 					</div>
 				</div>
+		<?php endif; ?>
 				<?php echo $content; ?>
 				<?php if ( $acc_gallery ) : ?>
 					<div class="acc--gallery">
