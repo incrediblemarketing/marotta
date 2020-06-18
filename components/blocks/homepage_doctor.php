@@ -32,27 +32,19 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
 		<div class="col-xl-7 col-lg-6 col-12">
 				<div class="number--area">
 					<div class="number--item">
-						<span class="number">
-							<?php echo $bc; ?>
-						</span>
+						<div class="number" data-number="<?php echo $bc; ?>">0</div>
 						<p>board certifications</p>
 					</div>
 					<div class="number--item">
-						<span class="number">
-							<?php echo $as; ?>
-						</span>
+						<div class="number" data-number="<?php echo $as; ?>">0</div>
 						<p>aesthetic surgeries</p>
 					</div>
 					<div class="number--item">
-						<span class="number">
-							<?php echo $ap; ?>
-						</span>
+						<div class="number" data-number="<?php echo $ap; ?>">0</div>
 						<p>aesthetic procedures</p>
 					</div>
 					<div class="number--item">
-						<span class="number">
-							<?php echo $yse; ?>
-						</span>
+						<div class="number" data-number="<?php echo $yse; ?>">0</div>
 						<p>years of surgical experience</p>
 					</div>
 				</div>

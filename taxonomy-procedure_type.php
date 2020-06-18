@@ -15,7 +15,7 @@ get_header();
 				<div class="col-xl-3">
 					<div class="filters">
 						<select name="doctors" id="doctors">
-							<option value="0">Physician / Provider</option>
+							<option value="all">Physician / Provider</option>
 							<?php
 							$field_key = 'field_5edeb4aa23511';
 							$field     = get_field_object( $field_key );
