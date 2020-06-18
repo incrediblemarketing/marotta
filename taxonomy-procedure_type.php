@@ -30,7 +30,7 @@ get_header();
 							?>
 						</select>
 						<select name="age" id="age">
-							<option value="0">Age</option>
+							<option value="all">Age</option>
 							<?php
 							$field_key = 'field_5edeb4b723512';
 							$field     = get_field_object( $field_key );
@@ -45,7 +45,7 @@ get_header();
 							?>
 						</select>
 						<select name="gender" id="gender">
-							<option value="0">Gender</option>
+							<option value="all">Gender</option>
 							<?php
 							$field_key = 'field_5eded3fb23513';
 							$field     = get_field_object( $field_key );

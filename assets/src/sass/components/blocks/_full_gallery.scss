@@ -246,6 +246,10 @@
     color: #333333;
     margin-bottom: 15px;
     -webkit-appearance: none;
+
+    &:focus {
+      outline: 2px solid $primary;
+    }
   }
 
   .filters {
@@ -305,7 +309,8 @@
       margin: 0;
       top: unset;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: $primary;
         color: $white;
       }

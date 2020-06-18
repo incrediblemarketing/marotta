@@ -276,38 +276,42 @@
 
 					var galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
 
-					$('#doctors').on('change',function(){
+					$('.filters select').on('change',function(){
 						if($('.swiper--hidden > .swiper-slide').length > 0){
 							$('.swiper--hidden > .swiper-slide').each( function (){
 								galleryTax.appendSlide($(this));	
 							});
+							galleryTax.destroy(false, true);
+							galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
+						}
+						var selected_doc = $('#doctors').children("option:selected").val();
+						var selected_age = $('#age').children("option:selected").val();
+						var selected_gender = $('#gender').children("option:selected").val();
+						
+						if( (selected_doc !== 'all') || (selected_age !== 'all') || (selected_gender !== 'all')){
 							
-							galleryTax.destroy(false, true);
-							galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
-						}
-						var selected_doc = $(this).children("option:selected").val();
-						$('.gallery--tax-container > .swiper-wrapper > .swiper-slide').removeAttr('data','hidden');
-						if(selected_doc !== 'all'){
-							$('.gallery-count').each(function() {
-								if($(this).data('doc') !== selected_doc){
-									$(this).parent().attr('data', 'hidden');
-									$('.gallery--tax-container .swiper-slide[data=hidden]').each( function (){
-										$('.swiper--hidden').append($(this));
-									});
-								}
-
-							});
-							galleryTax.destroy(false, true);
-							galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
-						}else{
-
-									$('.swiper--hidden > .swiper-slide').each( function (){
-										galleryTax.appendSlide($(this));	
-									});
-									
-									galleryTax.destroy(false, true);
-									galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
-						}
+								$('.gallery-count').each(function() {
+									if ( 
+										( ( $(this).data('doc') !== selected_doc ) && ( selected_doc !== 'all') ) || 
+										
+										( ( $(this).data('age') !== selected_age ) && ( selected_age !== 'all') ) || 
+										
+										( ( $(this).data('gender') !== selected_gender ) && ( selected_gender !== 'all') )
+									)
+									{
+										$('.swiper--hidden').append($(this).parent());
+									}
+								});
+	
+								galleryTax.destroy(false, true);
+								galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
+							}else{
+								$('.swiper--hidden > .swiper-slide').each( function (){
+									galleryTax.appendSlide($(this));	
+								});
+								galleryTax.destroy(false, true);
+								galleryTax = new Swiper('.gallery--tax-container', gallery_settings);
+							}
 					});
         },
         swiperSetup: function() {
