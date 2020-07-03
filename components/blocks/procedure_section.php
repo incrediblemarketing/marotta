@@ -49,7 +49,7 @@ $section_title = get_sub_field( 'title' );
 							else :
 								$active = '';
 							endif;
-							echo '<div class="procedure--item ' . $active . '" data-image="' . get_the_post_thumbnail_url( $post->ID ) . '">';
+							echo '<div class="procedure--item ' . $active . '" data-image="' . get_the_post_thumbnail_url( $post->ID, 'parent_thumb' ) . '">';
 								echo '<a href="' . esc_url( get_the_permalink() ) . '">' . esc_attr( get_the_title() ) . '</a>';
 								$args2 = array(
 									'post_type'      => 'procedure',

@@ -25,18 +25,25 @@ $reviews     = get_sub_field( 'review_area' );
 			<h2><?php echo esc_attr( $block_title ); ?></h2>
 			<?php
 			if ( $testimonial ) :
-				$post = $testimonial;
-				setup_postdata( $post );
-				$title = the_title();
-				if ( empty( $title ) ) {
-					$title = 'Patient';
-				}
-				?>
-				<div class="quote">
-					<?php the_content(); ?>
-					<strong><?php echo $title; ?></strong>
+				echo '<div class="swiper-container testimonial--slider">';
+					echo '<div class="swiper-wrapper">';
+				foreach ( $testimonial as $post ) :
+					setup_postdata( $post );
+					$title = the_title();
+					if ( empty( $title ) ) {
+						$title = 'Patient';
+					}
+					?>
+				<div class="swiper-slide">
+					<div class="quote">
+						<?php the_content(); ?>
+						<strong><?php echo $title; ?></strong>
+					</div>
 				</div>
+				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
+				</div>
+				</div>
 			<?php endif; ?>
 			<a href="/testimonials/" class="btn--teal">More patient experiences <i class="fal fa-long-arrow-right"></i></a>
 			<?php if ( have_rows( 'review_area' ) ) : ?>
@@ -51,14 +58,14 @@ $reviews     = get_sub_field( 'review_area' );
 					?>
 					<div class="review--item">
 						<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" />
-						<p>5 STARS / <?php echo esc_attr( $num ); ?>+ Reviews</p>
+						<p>5 STARS / <span class="number" data-number="<?php echo $num; ?>">0</span>+ Reviews</p>
 					</div>
 				<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
 		</div>
 		<div class="col-xl-5 offset-xl-1 col-lg-6">
-			<?php echo do_shortcode('[elfsight_instagram_feed id="1"]'); ?>
+			<?php echo do_shortcode( '[elfsight_instagram_feed id="1"]' ); ?>
 		</div>
   </div>
 </div>

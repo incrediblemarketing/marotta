@@ -25,6 +25,8 @@ $gallery_item = get_sub_field( 'gallery_item' );
 					array(
 						'taxonomy' => 'procedure_type',
 						'parent'   => 0,
+						'orderby'	=> 'menu_order',
+						'order' 	=> 'ASC'
 					)
 				);
 				$counter = 0;

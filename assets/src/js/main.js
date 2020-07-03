@@ -33,6 +33,7 @@
 				},
 				rollingCount: function(){
 					$(".number--item").each(createEffect);
+					$(".review--item").each(reviewEffect);
 					
 					function createEffect(i, element) {
 						var controller = new ScrollMagic.Controller();
@@ -48,6 +49,26 @@
 							triggerHook: 0.5
 						})
 							.setTween(tl3)
+							.addTo(controller);
+
+						function updateHandler() {
+							number.html(game.score);
+						}
+					}
+					function reviewEffect(i, element) {
+						var controller = new ScrollMagic.Controller();
+						var tl4 = new TimelineMax({ paused: false });
+						var number = $(this).find(".number");
+						var NewVal = number.attr('data-number');
+						var game = {score:0};
+
+						tl4.to(game, 2, {score:NewVal, roundProps:"score", onUpdate:updateHandler, ease:Linear.easeNone});
+
+						var scene2 = new ScrollMagic.Scene({
+							triggerElement: ".block--homepage_testimonial",
+							triggerHook: 0.3
+						})
+							.setTween(tl4)
 							.addTo(controller);
 
 						function updateHandler() {
@@ -348,6 +369,14 @@
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
             }
+					});
+					var testimonial_home = new Swiper(".testimonial--slider", {
+						slidesPerView: 1,
+						loop: true,
+						autoplay: {
+							delay: 4500,
+							disableOnInteraction: false,
+						},
 					});
 					
 					var team_swiper = new Swiper(".team--scroller", {

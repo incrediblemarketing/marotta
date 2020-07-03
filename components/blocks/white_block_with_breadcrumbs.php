@@ -16,8 +16,8 @@ $left  = get_sub_field( 'left_column' );
 $right = get_sub_field( 'right_column' );
 global $post;
 
-$parentId     = $post->post_parent;
-$grandparentId     = $parentId->post_parent;
+$parentId      = $post->post_parent;
+$grandparentId = $parentId->post_parent;
 
 ?>
 
