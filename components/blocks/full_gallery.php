@@ -23,6 +23,7 @@
 					array(
 						'taxonomy' => 'procedure_type',
 						'parent'   => 0,
+						'exclude'  => 15,
 					)
 				);
 				foreach ( $terms as $term ) :

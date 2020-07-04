@@ -70,6 +70,15 @@
   }
 
   .image__holder {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      max-height: 500px;
+    }
     img {
       width: 100%;
       height: auto;

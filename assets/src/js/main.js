@@ -88,8 +88,12 @@
 				},
 				homepageGalleryToggle: function(){
 					$('h3[data-toggle="gallery--toggle"]').on('click', function(){
+						var $toggle = $(this).attr('data-name');
+						$('.block--homepage_gallery .image__holder').removeClass('active');
 						$('.term--area .child--terms').removeClass('active');
 						$(this).next('.child--terms').addClass('active');
+						$('[data-toggle="'+$toggle+'"]').addClass('active');
+						console.log('[data-toggle="'+$toggle+'"]')
 					});
 				},
 				homeProcedure: function() {
