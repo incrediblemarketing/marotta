@@ -22,10 +22,10 @@ $reviews     = get_sub_field( 'review_area' );
 <div class="container">
   <div class="row">
 		<div class="col-lg-6">
-			<h2><?php echo esc_attr( $block_title ); ?></h2>
+			<h2 class="fade-in-left"><?php echo esc_attr( $block_title ); ?></h2>
 			<?php
 			if ( $testimonial ) :
-				echo '<div class="swiper-container testimonial--slider">';
+				echo '<div class="swiper-container testimonial--slider fade-in-bottom">';
 					echo '<div class="swiper-wrapper">';
 				foreach ( $testimonial as $post ) :
 					setup_postdata( $post );
@@ -45,7 +45,7 @@ $reviews     = get_sub_field( 'review_area' );
 				</div>
 				</div>
 			<?php endif; ?>
-			<a href="/testimonials/" class="btn--teal">More patient experiences <i class="fal fa-long-arrow-right"></i></a>
+			<a href="/testimonials/" class="btn--teal fade-in-bottom">More patient experiences <i class="fal fa-long-arrow-right"></i></a>
 			<?php if ( have_rows( 'review_area' ) ) : ?>
 				<div class="review--area">
 				<?php

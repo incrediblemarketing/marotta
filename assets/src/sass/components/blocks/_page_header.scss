@@ -10,6 +10,12 @@
     padding: 0 0 9vw;
   }
 
+  .btn--teal {
+    position: relative;
+    top: 80px;
+    opacity: 0;
+  }
+
   .image__holder {
     @include absolute_cover;
     z-index: 0;

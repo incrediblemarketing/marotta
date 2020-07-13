@@ -54,6 +54,8 @@
   }
   .youtube--id {
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
     transform: translateY(-280px);
 
     @include mq(sm) {
@@ -70,6 +72,11 @@
     }
     @include mq(xxl) {
       transform: translateY(-9vw);
+    }
+
+    .embed-responsive {
+      border-radius: 10px;
+      overflow: hidden;
     }
   }
 

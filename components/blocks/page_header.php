@@ -13,13 +13,13 @@
 
 $bg_image = get_sub_field( 'background_image' );
 ?>
-<div class="image__holder">
-	<?php if ( $bg_image ) : ?>
-		<img src="<?php echo esc_url( $bg_image['sizes']['hero_thumb'] ); ?>" alt="<?php echo esc_attr( $bg_image['alt'] ); ?>" />
-	<?php else : ?>
-		<?php im_the_placeholder_image( 'hero_thumb', '' ); ?>
-	<?php endif; ?>
-</div>
+<?php if ( $bg_image ) : ?>
+	<div class="image__holder" data-bg-image="<?php echo esc_url( $bg_image['sizes']['hero_thumb'] ); ?>"></div>
+<?php else : ?>
+		<div class="image__holder">
+			<?php im_the_placeholder_image( 'hero_thumb', '' ); ?>
+		</div>
+<?php endif; ?>
 <div class="container">
 	<div class="row">
 		<div class="col-12">

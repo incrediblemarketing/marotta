@@ -18,10 +18,10 @@ $section_title = get_sub_field( 'title' );
 <div class="container">
 	<div class="row">
 		<div class="col-12 procedure--title-area">
-			<h2><?php echo esc_attr( $section_title ); ?></h2>
-			<a href="/procedures/" class="btn--teal">View all treatments <i class="fal fa-long-arrow-right"></i></a>
+			<h2 class="fade-in-left"><?php echo esc_attr( $section_title ); ?></h2>
+			<a href="/procedures/" class="btn--teal fade-in-right">View all treatments <i class="fal fa-long-arrow-right"></i></a>
 		</div>
-		<div class="col-12 procedure--select-area">
+		<div class="col-12 procedure--select-area fade-in-bottom">
 			<div class="row">
 				<div class="col-xl-5 col-lg-5 col-md-4 col-12">
 					<div class="image__holder">

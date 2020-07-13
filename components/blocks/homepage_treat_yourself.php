@@ -22,7 +22,7 @@ $bg_image = get_sub_field( 'background_image' );
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12">
-			<div class="content--area">
+			<div class="content--area fade-in-left">
 				<?php echo $content; ?>
 			</div>
 		</div>

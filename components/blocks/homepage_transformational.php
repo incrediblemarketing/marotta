@@ -16,11 +16,9 @@ $gallery       = get_sub_field( 'gallery' );
 $bg_image      = get_sub_field( 'background_image' );
 
 ?>
-<div class="background--image">
-	<?php if ( $bg_image ) : ?>
-		<img src="<?php echo $bg_image['sizes']['hero_thumb']; ?>" />
-	<?php endif; ?>
-</div>
+<?php if ( $bg_image ) : ?>
+	<div class="background--image" data-bg-image="<?php echo $bg_image['sizes']['hero_thumb']; ?>"></div>
+<?php endif; ?>
 <div class="container">
   <div class="row">
 		<div class="col-xxl-5 col-lg-6">
@@ -35,8 +33,8 @@ $bg_image      = get_sub_field( 'background_image' );
 				<?php endif; ?>
 		</div>
 		<div class="col-xxl-7 col-lg-6">
-			<h2><?php echo $section_title; ?></h2>
-			<div class="block--area">
+			<h2 class="fade-in-right"><?php echo $section_title; ?></h2>
+			<div class="block--area fade-in-bottom">
 			<?php if ( have_rows( 'content' ) ) : ?>
 				<?php $counter = 0; ?>
 				<?php

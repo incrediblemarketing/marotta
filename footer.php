@@ -49,13 +49,13 @@
 		<div class="row">
 			<div class="col-12 px-0">
 				<div class="content--area">
-					<div class="address--area">
+					<div class="address--area fade-in-left">
 						<?php if ( $address_link && $address && $address2 ) : ?>
 						<p><i class="fas fa-map-marker-alt"></i> <?php echo esc_attr( $address ); ?><br /><?php echo esc_attr( $address2 ); ?></p>
 						<a href="<?php echo esc_attr( $address_link ); ?>" class="btn--teal" target="_blank">Get directions <i class="fal fa-long-arrow-right"></i></a>
 						<?php endif; ?>
 					</div>
-					<div class="phone--area">
+					<div class="phone--area fade-in-left">
 						<?php if ( $phone_url && $phone ) : ?>
 						<p><i class="fas fa-phone"></i> <a href="tel:+1-<?php echo esc_attr( $phone_url ); ?>"><?php echo esc_attr( $phone ); ?></a></p>
 						<?php endif; ?>
@@ -74,8 +74,10 @@
 	<div class="container-fluid">
 		<div class="row justify-content-center">
 			<div class="col-xl-9">
-					<h3>Schedule a consultation</h3>
-					<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false"]' ); ?>
+					<h3 class="fade-in-left">Schedule a consultation</h3>
+					<div class="fade-in-bottom">
+						<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false"]' ); ?>
+					</div>
 			</div>
 		</h3>
 	</div>
@@ -91,7 +93,6 @@
 		</div>
 	</div>
 </footer>
-
 </div><!-- end of .site-wrap -->
 
 <?php wp_footer(); ?>

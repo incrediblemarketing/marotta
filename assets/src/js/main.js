@@ -30,7 +30,74 @@
 					this.homepageGalleryToggle();
 					this.sectionSelect();
 					this.rollingCount();
+					this.openAnim();
+					this.easeScroll();
 				},
+				easeScroll: function(){
+					var $window = $(window);
+					var scrollTime = .8;
+					var scrollDistance = 100;
+					$window.on("mousewheel DOMMouseScroll", function(event){
+				
+						var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+						var scrollTop = $window.scrollTop();
+						var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+				
+						TweenMax.to($window, scrollTime, {
+							scrollTo : { y: finalScroll, autoKill:true },
+								ease: Power1.easeOut,
+								overwrite: 5							
+							});
+				
+					});
+				},
+				openAnim: function(){
+					if ($(".block--page_header h4, .block--hero h1").length > 0) {
+            var tl = new TimelineLite(),
+              text = $(".block--page_header h4, .block--hero h1"),
+              split = new SplitText(".block--page_header h4,.block--hero h1", {
+                type: "chars,words"
+              }),
+              chars = split.chars,
+              centerIndex = Math.floor(chars.length / 2),
+              i;
+            tl.to(".block--page_header h4,.block--hero h1", 0, {
+              opacity: 1
+            });
+            for (i = 0; i < chars.length; i++) {
+              tl.from(
+                chars[i],
+                1.8,
+                {
+                  x: (i - centerIndex) * 40,
+                  opacity: 0,
+                  ease: Power2.easeOut
+                },
+                i * 0.1
+              );
+            }
+          }
+					
+          //Open page animations
+          var openTween = new TimelineMax();
+          openTween.to(".site-nav .logo img", 0.6, { opacity: 1, left: 0 });
+          openTween.to(".site-nav .address--nav", 0.3, { opacity: 1 });
+          openTween.to(".site-nav .phone--nav", 0.3, { opacity: 1 });
+          openTween.to(".site-nav .social-icons", 0.3, { opacity: 1 });
+          openTween.to(".site-nav .button--area", 0.3, { opacity: 1 });
+          openTween.staggerTo(
+						".site-nav .menu > li",
+            0.3,
+            {
+							opacity: 1,
+              top: 0
+            },
+            0.1
+						);
+					openTween.to(".block--page_header .btn--teal, .block--hero .btn--teal", 0.5, { opacity: 1, top: 0 }, 2);
+
+					
+					},
 				rollingCount: function(){
 					$(".number--item").each(createEffect);
 					$(".review--item").each(reviewEffect);
@@ -244,13 +311,28 @@
                   autoAlpha: 1,
                   right: 0
                 });
-                tl2.to($current.find(".fade-in"), 0.6, {
+                tl.to($current.find(".eapps-instagram-feed"), 0.5, {
                   autoAlpha: 1
                 });
+                tl.staggerTo($current.find(".gallery--item img"), 0.5, {
+									autoAlpha: 1,
+									left:0
+                }, .3);
+                tl.staggerTo($current.find(".section--titles .item"), 0.5, {
+									autoAlpha: 1,
+									top:0
+                }, .3);
+                tl2.to($current.find(".fade-in"), 0.6, {
+									autoAlpha: 1
+                });
                 tl2.to($current.find(".fade-in-bottom"), 0.6, {
-                  autoAlpha: 1,
+									autoAlpha: 1,
                   bottom: 0
                 });
+								tl2.staggerTo($current.find(".term--area"), 0.5, {
+									autoAlpha: 1,
+									top:0
+								}, .3);
                 tl.play();
                 tl2.play();
               })
@@ -263,7 +345,7 @@
 					var settings_thumb = {
 						spaceBetween: 30,
 						slidesPerView: 3,
-						loop: true,
+						loop: false,
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
 					};
@@ -396,14 +478,14 @@
 					var galleryThumbs = new Swiper('.gallery-thumb', {
 						spaceBetween: 30,
 						slidesPerView: 3,
-						loop: true,
+						loop: false,
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
 					});
 
 					var galleryTop = new Swiper('.gallery-container', {
 						spaceBetween: 10,
-						loop:true,
+						loop:false,
 						navigation: {
 							nextEl: '.swiper-button-next',
 							prevEl: '.swiper-button-prev',
@@ -421,13 +503,13 @@
 						var galleryThumb = new Swiper(thumb_name, {
 									spaceBetween: 30,
 									slidesPerView: 3,
-									loop: true,
+									loop: false,
 									watchSlidesVisibility: true,
 									watchSlidesProgress: true,
 						});
 						var galleryTop = new Swiper(name, {
 							spaceBetween: 10,
-							loop:true,
+							loop:false,
 							thumbs: {
 								swiper: galleryThumb,
 							},

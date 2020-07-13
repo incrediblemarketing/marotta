@@ -26,11 +26,11 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
   <div class="row">
 		<div class="col-xl-5 col-lg-6 col-12 d-flex">
 			<?php if ( $doc_image ) : ?>
-				<img src="<?php echo $doc_image['sizes']['parent_thumb']; ?>" class="doc-image" alt="<?php echo $doc_image['alt']; ?>" />
+				<img src="<?php echo $doc_image['sizes']['parent_thumb']; ?>" class="doc-image fade-in-left" alt="<?php echo $doc_image['alt']; ?>" />
 			<?php endif; ?>
 		</div>
 		<div class="col-xl-7 col-lg-6 col-12">
-				<div class="number--area">
+				<div class="number--area fade-in-bottom">
 					<div class="number--item">
 						<div class="number" data-number="<?php echo $bc; ?>">0</div>
 						<p>board certifications</p>
@@ -48,11 +48,11 @@ $yse         = get_sub_field( 'years_of_surgical_experience' );
 						<p>years of surgical experience</p>
 					</div>
 				</div>
-				<h2><?php echo $block_title; ?></h2>
-				<h5><?php echo $subtitle; ?></h5>
+				<h2 class="fade-in-bottom"><?php echo $block_title; ?></h2>
+				<h5 class="fade-in-bottom"><?php echo $subtitle; ?></h5>
 				<?php echo $content; ?>
 				<?php if ( $acc_gallery ) : ?>
-					<div class="acc--gallery">
+					<div class="acc--gallery fade-in-right">
 						<?php foreach ( $acc_gallery as $image ) : ?>
 							<div class="gallery--item">
 								<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />

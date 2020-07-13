@@ -20,7 +20,7 @@ $skin_item    = get_sub_field( 'skin_item' );
 <div class="container">
   <div class="row">
 		<div class="col-12">
-			<h2>Before <small>&</small> After</h2>
+			<h2 class="fade-in-left">Before <small>&</small> After</h2>
 		</div>
 		<div class="col-lg-6">
 			<?php
@@ -62,6 +62,7 @@ $skin_item    = get_sub_field( 'skin_item' );
 			<?php endforeach; ?>
 		</div>
 		<div class="col-lg-6">
+			<div class="fade-in-right">
 			<?php
 			if ( $gallery_item ) :
 				$counter = 0;
@@ -186,6 +187,7 @@ $skin_item    = get_sub_field( 'skin_item' );
 				wp_reset_postdata();
 			endif;
 			?>
+			</div>
 		</div>
   </div>
 </div>

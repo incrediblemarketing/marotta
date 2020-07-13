@@ -137,7 +137,7 @@
         z-index: 1;
 
         @include mq(lg) {
-          margin-bottom: -204px !important;
+          margin-bottom: -113px !important;
           margin-right: 169px !important;
         }
       }
@@ -149,5 +149,8 @@
         z-index: 3 !important;
       }
     }
+  }
+  .eapps-instagram-feed {
+    opacity: 0;
   }
 }
