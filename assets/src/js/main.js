@@ -184,6 +184,9 @@
 					}
 				},
         siteNavSticky: function() {
+					if ($cache.window.scrollTop() > 0) {
+						$cache.siteNav.addClass("sticky");
+					} 
           $cache.window.scroll(function() {
             if ($cache.window.scrollTop() > 0) {
               $cache.siteNav.addClass("sticky");

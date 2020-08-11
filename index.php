@@ -11,7 +11,8 @@
  * @since      1.0.0
  */
 
-$bg_image = get_field('page_header','options');
+$bg_image = get_field( 'header_image', 'option' );
+
 get_header(); ?>
 <section class="block--page_header">
 	<div class="image__holder">

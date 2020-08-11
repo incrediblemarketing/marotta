@@ -12,6 +12,10 @@
  */
 
 $bg_image = get_sub_field( 'background_image' );
+
+if ( ! $bg_image ) {
+	$bg_image = get_field( 'header_image', 'option' );
+}
 ?>
 <?php if ( $bg_image ) : ?>
 	<div class="image__holder" data-bg-image="<?php echo esc_url( $bg_image['sizes']['hero_thumb'] ); ?>"></div>

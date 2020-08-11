@@ -13,5 +13,5 @@
 
 ?>
 <nav class="navigation navigation-child-pages">
-	<?php echo esc_html( get_child_page_menu() ); ?>
+	<?php echo get_child_page_menu(); ?>
 </nav>

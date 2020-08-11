@@ -22,7 +22,7 @@ function im_is_blog() {
  * Get top level page id.
  */
 function get_top_level_id() {
-	$ancestors = get_ancestors( get_the_ID(), 'page' );
+	$ancestors = get_ancestors( get_the_ID(), 'procedure' );
 
 	$top_level_id = end( $ancestors );
 	if ( ! $top_level_id ) :
@@ -48,9 +48,9 @@ function get_child_page_menu( $top_level_id = null, $current_page_id = null ) {
 	}
 
 	$args = array(
-		'post_type'      => 'page',
+		'post_type'      => 'procedure',
 		'posts_per_page' => -1,
-		'post_parent'    => $top_level_id,
+		'post_parent'    => $current_page_id,
 		'order'          => 'ASC',
 		'orderby'        => 'menu_order',
 	);
@@ -65,9 +65,8 @@ function get_child_page_menu( $top_level_id = null, $current_page_id = null ) {
 
 		while ( $parent->have_posts() ) {
 			$parent->the_post();
-			$html .= get_the_ID() === $current_page_id ? '<li class="current-menu-item">' : '<li>';
+			$html .= '<li>';
 			$html .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
-			$html .= get_child_page_menu( get_the_ID(), $current_page_id );
 			$html .= '</li>';
 		}
 

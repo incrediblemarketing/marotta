@@ -399,7 +399,7 @@
       .menu {
         > li.menu-item {
           a {
-            padding: 25px 7px;
+            padding: 29.5px 7px;
 
             @include mq(xxl) {
               padding: 25px 1.2vw;
@@ -407,6 +407,13 @@
 
             &::before {
               bottom: 15px;
+            }
+          }
+        }
+        .sub-menu {
+          > li {
+            a {
+              padding: 7px 20px !important;
             }
           }
         }
