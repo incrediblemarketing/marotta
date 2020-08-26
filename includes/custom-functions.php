@@ -314,26 +314,6 @@ function enqueue_slider_assets() {
 }
 
 /**
- * Move Page Admin Menu Item
- */
-function move_page_admin_menu_item() {
-	global $menu;
-
-	foreach ( $menu as $key => $value ) {
-		if ( 'edit.php?post_type=page' === $value[2] ) {
-			$oldkey = $key;
-		}
-	}
-
-	$newkey = 4; // use whatever index gets you the position you want.
-	// if this key is in use you will write over a menu item!
-	$menu[ $newkey ] = $menu[ $oldkey ];
-	$menu[ $oldkey ] = array();
-
-}
-add_action( 'admin_menu', 'move_page_admin_menu_item' );
-
-/**
  * Change sort order (checking for gallery)
  *
  * @param array $query Query $args that will be changing.
