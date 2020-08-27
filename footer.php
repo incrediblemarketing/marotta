@@ -20,12 +20,13 @@
 	$phone        = get_field( 'business_phone_display', 'option' );
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 	$fax          = get_field( 'business_fax', 'option' );
-	$bg_image     = get_field( 'treat_background_image', 'option' );
 	$map_image    = get_field( 'map_image', 'option' );
+	$bg_image     = get_field( 'treat_background_image', 'option' );
 	$content      = get_field( 'treat_content', 'option' );
 	$bottom_text  = get_field( 'footer_bottom_text', 'option' );
 
 ?>
+<?php if(!is_woocommerce()) : ?>
 <section class="block block--homepage_treat_yourself ">
 	<div class="image__holder">
 		<img src="<?php echo esc_attr( $bg_image['sizes']['hero_thumb'] ); ?>" />
@@ -40,6 +41,7 @@
 		</div>
 	</div>
 </section>
+<?php endif; ?>
 
 <section class="block block--info_area">
 	<div class="image__holder">

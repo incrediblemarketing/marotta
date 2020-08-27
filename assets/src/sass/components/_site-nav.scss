@@ -422,7 +422,8 @@
   }
 }
 
-body.tax-procedure_type {
+body.tax-procedure_type,
+body.woocommerce-page {
   .site-nav {
     button {
       border-color: $black;
@@ -506,6 +507,16 @@ body.tax-procedure_type {
         span {
           background: $white;
         }
+      }
+    }
+  }
+}
+
+body.woocommerce-page {
+  .site-nav {
+    .logo {
+      .m-logo {
+        filter: brightness(0) invert(0);
       }
     }
   }

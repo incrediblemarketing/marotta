@@ -16,7 +16,11 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
-		<?php get_template_part( 'components/blocks' ); ?>
+		<?php if ( is_shop() ) : ?>
+			<?php get_template_part( 'woocommerce/archive-product' ); ?>
+		<?php else : ?>
+			<?php get_template_part( 'components/blocks' ); ?>
+		<?php endif; ?>
 	<?php endwhile; ?> 
 <?php endif; ?>  
 

@@ -58,6 +58,7 @@ require_once get_template_directory() . '/includes/filters.php';
 // SIDEBARS
 // ==================================================.
 require_once get_template_directory() . '/includes/sidebars/blog.php';
+require_once get_template_directory() . '/includes/sidebars/woocommerce-sidebar.php';
 
 // SHORTCODES
 // ==================================================.

@@ -370,3 +370,17 @@ function get_gallery_info() {
 
 add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
 add_action( 'wp_ajax_nopriv_get_gallery_info', 'get_gallery_info' );
+
+/**
+ * Update Cart Number
+ *
+ * @param array $fragments Elements to fix the cart amount.
+ */
+function misha_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	$fragments['.cart-button'] = '<a href="' . wc_get_cart_url() . '" class="text-link cart-button"><i class="fas fa-shopping-cart"></i> Check out (' . $woocommerce->cart->cart_contents_count . ') items</a>';
+	return $fragments;
+
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'misha_add_to_cart_fragment' );
