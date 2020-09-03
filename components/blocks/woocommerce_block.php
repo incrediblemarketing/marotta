@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Support
+ * Display Woocommerce Block
  *
  * @category   Components
  * @package    WordPress
@@ -11,5 +11,14 @@
  * @since      1.0.0
  */
 
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'woocommerce' );
+$content = get_sub_field( 'content' );
+$content = apply_filters( 'the_content', $content );
+?>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<?php echo $content; ?>
+		</div>
+	</div>
+</div>

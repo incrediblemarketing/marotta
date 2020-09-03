@@ -384,3 +384,30 @@ function misha_add_to_cart_fragment( $fragments ) {
 
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'misha_add_to_cart_fragment' );
+
+/**
+ * Update Cross Sells
+ *
+ * @param array $columns Change # of columns in Cross Sells.
+ */
+function im_change_cross_sells_columns( $columns ) {
+	return 2;
+}
+
+add_filter( 'woocommerce_cross_sells_columns', 'im_change_cross_sells_columns' );
+
+/**
+ * Update Cross Sells
+ *
+ * @param array $columns Change # of items in Cross Sells.
+ */
+function bbloomer_change_cross_sells_product_no( $columns ) {
+	return 2;
+}
+add_filter( 'woocommerce_cross_sells_total', 'bbloomer_change_cross_sells_product_no' );
+
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10,0);
+
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20,0);
+
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10,0);

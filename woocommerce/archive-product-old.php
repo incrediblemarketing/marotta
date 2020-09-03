@@ -1,37 +1,20 @@
 <?php
 /**
- * The Template for displaying product archives, including the main shop page which is a post type archive
+ * archive-product.php
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.4.0
+ * @category   Components
+ * @package    WordPress
+ * @subpackage Incredible Theme
+ * @author     Nick Gonzales
+ * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+ * @link       https://www.incrediblemarketing.com/
+ * @since      1.0.0
  */
 
-defined( 'ABSPATH' ) || exit;
-
+global $woocommerce;
 $bg_image = get_field( 'treat_background_image', 'option' );
 $content  = get_field( 'treat_content', 'option' );
-
-get_header( 'shop' );
-
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
-do_action( 'woocommerce_before_main_content' );
-?>
-
+get_header(); ?>
 <section class="block block--homepage_treat_yourself shop--top">
 	<div class="image__holder">
 		<img src="<?php echo esc_attr( $bg_image['sizes']['hero_thumb'] ); ?>" />
@@ -47,7 +30,7 @@ do_action( 'woocommerce_before_main_content' );
 	</div>
 </section>
 
-<section class="blog--page woocommerce">
+<section class="blog--page">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-9">
@@ -98,8 +81,7 @@ do_action( 'woocommerce_before_main_content' );
 					 * @hooked wc_no_products_found - 10
 					 */
 					do_action( 'woocommerce_no_products_found' );
-				}
-				?>
+				} ?>
 			</div>
 			<?php if ( is_active_sidebar( 'woocommerce_blog' ) ) : ?>
 				<div class="col-lg-3">
@@ -111,5 +93,3 @@ do_action( 'woocommerce_before_main_content' );
 		</div>
 	</div>
 </section>
-<?php 
-get_footer( 'shop' );
