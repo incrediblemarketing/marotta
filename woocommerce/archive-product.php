@@ -31,17 +31,12 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 ?>
-
-<section class="block block--homepage_treat_yourself shop--top">
-	<div class="image__holder">
-		<img src="<?php echo esc_attr( $bg_image['sizes']['hero_thumb'] ); ?>" />
-	</div>
-	<div class="container-fluid">
+<section class="block--slider shop--top">
+	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="content--area">
-					<?php echo $content; ?>
-				</div>
+				<h2>Featured Products</h2>
+				<?php echo do_shortcode('[featured_products_slider]'); ?>
 			</div>
 		</div>
 	</div>

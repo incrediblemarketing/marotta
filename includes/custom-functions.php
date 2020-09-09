@@ -319,7 +319,7 @@ function enqueue_slider_assets() {
  * @param array $query Query $args that will be changing.
  */
 function my_change_sort_order( $query ) {
-	if ( is_archive( 'gallery' ) ) :
+	if ( is_post_type_archive( 'gallery' ) ) :
 		$query->set( 'order', 'ASC' );
 		$query->set( 'orderby', 'menu_order' );
 		$query->set( 'posts_per_page', '-1' );
@@ -406,8 +406,19 @@ function bbloomer_change_cross_sells_product_no( $columns ) {
 }
 add_filter( 'woocommerce_cross_sells_total', 'bbloomer_change_cross_sells_product_no' );
 
-remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10,0);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10, 0 );
 
-remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20,0);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 
-remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10,0);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10, 0 );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20, 0 );
+
+/**
+ * Update Single Product Display
+ */
+function im_woocommerce_additional_info_and_description() {
+	wc_get_template( 'single-product/tabs/additional-information.php' );
+	wc_get_template( 'single-product/short-description.php' );
+}
+add_filter( 'woocommerce_single_product_summary', 'im_woocommerce_additional_info_and_description', 20 );

@@ -196,7 +196,7 @@
           });
         },
         mobileMenu: function() {
-					$('a').each(function() {
+					$('a:not(.tinvwl_add_to_wishlist_button)').each(function() {
 						var a = new RegExp('/' + window.location.host + '/');
 						if(!a.test(this.href)) {
 								$(this).click(function(event) {
