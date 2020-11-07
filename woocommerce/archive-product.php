@@ -31,12 +31,44 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 ?>
+<?php if ( have_rows( 'shop_slider', 'option' ) ) : ?>
+	<section class="block block--shop-slider">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="swiper-container shop--slider">
+						<div class="swiper-wrapper">
+							<?php while ( have_rows( 'shop_slider', 'option' ) ) : ?>
+								<?php the_row(); ?>
+								<?php $image = get_sub_field( 'banner_image' ); ?>
+								<?php $link = get_sub_field( 'banner_link' ); ?>
+								<div class="swiper-slide">
+									<?php
+									if ( $link ) {
+										echo '<a href="' . $link . '">'; }
+									?>
+										<img src="<?php echo $image['sizes']['shop_thumb']; ?>" />
+									<?php
+									if ( $link ) {
+										echo '</a>'; }
+									?>
+								</div>
+							<?php endwhile; ?>
+						</div>
+						<?php get_template_part( 'components/swiper-nav' ); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
+
 <section class="block--slider shop--top">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<h2>Featured Products</h2>
-				<?php echo do_shortcode('[featured_products_slider]'); ?>
+				<?php echo do_shortcode( '[featured_products_slider]' ); ?>
 			</div>
 		</div>
 	</div>
@@ -106,5 +138,5 @@ do_action( 'woocommerce_before_main_content' );
 		</div>
 	</div>
 </section>
-<?php 
+<?php
 get_footer( 'shop' );

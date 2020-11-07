@@ -433,6 +433,14 @@
               prevEl: ".swiper-button-prev"
             }
 					});
+          var shop_block = new Swiper(".shop--slider", {
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            }
+					});
           var event_block = new Swiper(".event-swiper", {
             slidesPerView: 1,
             loop: true,
