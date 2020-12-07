@@ -93,6 +93,11 @@
     }
   }
 
+  .eapps-instagram-feed,
+  .eapps-instagram-feed-posts-slider,
+  .eapps-instagram-feed-posts-view.eui-slider-slide {
+    overflow: visible !important;
+  }
   .insta--gallery,
   .eapps-instagram-feed-posts-view.eui-slider-slide {
     display: flex;
@@ -149,8 +154,5 @@
         z-index: 3 !important;
       }
     }
-  }
-  .eapps-instagram-feed {
-    opacity: 0;
   }
 }

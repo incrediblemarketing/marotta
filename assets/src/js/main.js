@@ -167,21 +167,15 @@
 					var $featured_image = $('.procedure--item.active').attr('data-image');
 					$('.procedure--select-area .image__holder img').attr('src', $featured_image);
 
-					if(window.outerWidth > 580){
-						$('.procedure--item').on('hover',function(){
-							var $featured_image = $(this).attr('data-image');
-							$('.procedure--select-area .image__holder img').attr('src', $featured_image);
-							$('.procedure--item').removeClass('active');
-							$(this).addClass('active');
-						});
-					}else{
+					
 						$('.procedure--item').on('click',function(e){
 							e.preventDefault();
+							$('.procedure--item').removeClass('active');
 							var $featured_image = $(this).attr('data-image');
 							$('.procedure--select-area .image__holder img').attr('src', $featured_image);
 							$(this).toggleClass('active');
 						});
-					}
+					
 				},
         siteNavSticky: function() {
 					if ($cache.window.scrollTop() > 0) {
@@ -452,6 +446,7 @@
           var testimonial_block = new Swiper(".testimonial-container", {
 						slidesPerView: 'auto',
 						centeredSlides: true,
+						autoplay: true,
             loop: true,
             navigation: {
               nextEl: ".swiper-button-next",

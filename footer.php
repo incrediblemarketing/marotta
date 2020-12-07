@@ -20,13 +20,14 @@
 	$phone        = get_field( 'business_phone_display', 'option' );
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 	$fax          = get_field( 'business_fax', 'option' );
+	$hours        = get_field( 'business_hours', 'option' );
 	$map_image    = get_field( 'map_image', 'option' );
 	$bg_image     = get_field( 'treat_background_image', 'option' );
 	$content      = get_field( 'treat_content', 'option' );
 	$bottom_text  = get_field( 'footer_bottom_text', 'option' );
 
 ?>
-<?php if(!is_woocommerce()) : ?>
+<?php if ( ! is_woocommerce() ) : ?>
 <section class="block block--homepage_treat_yourself ">
 	<div class="image__holder">
 		<img src="<?php echo esc_attr( $bg_image['sizes']['hero_thumb'] ); ?>" />
@@ -52,8 +53,9 @@
 			<div class="col-12 px-0">
 				<div class="content--area">
 					<div class="address--area fade-in-left">
-						<?php if ( $address_link && $address && $address2 ) : ?>
+						<?php if ( $address_link && $address && $address2  && $hours) : ?>
 						<p><i class="fas fa-map-marker-alt"></i> <?php echo esc_attr( $address ); ?><br /><?php echo esc_attr( $address2 ); ?></p>
+						<p><i class="far fa-clock"></i> <?php echo $hours; ?></p>
 						<a href="<?php echo esc_attr( $address_link ); ?>" class="btn--teal" target="_blank">Get directions <i class="fal fa-long-arrow-right"></i></a>
 						<?php endif; ?>
 					</div>

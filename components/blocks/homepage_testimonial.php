@@ -65,7 +65,7 @@ $reviews     = get_sub_field( 'review_area' );
 			<?php endif; ?>
 		</div>
 		<div class="col-xl-5 offset-xl-1 col-lg-6">
-			<?php echo do_shortcode( '[elfsight_instagram_feed id="1"]' ); ?>
+			<?php echo do_shortcode( '[elfsight_instagram_feed id="2"]' ); ?>
 		</div>
   </div>
 </div>

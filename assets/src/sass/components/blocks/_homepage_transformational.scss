@@ -4,7 +4,7 @@
   position: relative;
 
   @include mq(md) {
-    padding: 194px 0 167px;
+    padding: 194px 0;
   }
 
   .background--image {
@@ -100,7 +100,7 @@
     }
 
     p {
-      margin-bottom: 50px;
+      margin-bottom: 35px;
     }
 
     &.active {

@@ -82,7 +82,7 @@ get_header();
 										<div class="swiper-container gallery-count gallery-container-<?php echo $counter; ?>" data-doc="<?php echo get_field( 'physician' ); ?>" data-age="<?php echo get_field( 'age' ); ?>" data-gender="<?php echo get_field( 'gender' ); ?>">
 											<div class="swiper-wrapper">
 											<?php foreach ( $gallery_images as $image ) : ?>
-													<div class="swiper-slide">
+													<div class="swiper-slide" data-id="<?php echo $post->ID; ?>">
 														<img src="<?php echo esc_url( $image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 														<div class="ba-box before">Before</div>
 														<div class="ba-box after">After</div>

@@ -17,17 +17,23 @@
     z-index: 0;
     padding: 0;
     max-width: 100%;
-    height: auto;
+    height: 500px;
+    position: relative;
+
+    img {
+      @include absolute_cover;
+      object-fit: cover;
+    }
   }
 
   .content--area {
-    padding-top: 78px;
-    line-height: 1.5em;
+    padding-top: 50px;
+    line-height: 1.4em;
     color: $white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
     @include mq(xl) {
-      font-size: 1.777rem;
+      font-size: 1.3rem;
     }
 
     a {
@@ -81,10 +87,10 @@
       margin-bottom: 22px;
 
       @include mq(md) {
-        font-size: 3rem;
+        font-size: 2.2rem;
       }
       @include mq(xl) {
-        font-size: 4rem;
+        font-size: 2.5rem;
       }
     }
 
@@ -96,22 +102,22 @@
       }
       ul.gform_fields {
         li.gfield {
-          margin: 0 0 20px;
-
-          @include mq(lg) {
-            margin: 0 0 40px;
-          }
+          margin: 0 0 15px;
 
           input,
           textarea {
             background: #fdfdfd;
             border: 2px solid #dddddd;
             border-radius: 5px;
-            padding: 14px 25px !important;
+            padding: 10px 25px !important;
             font-size: 16px !important;
             line-height: 21px;
             color: #555;
             text-transform: initial;
+          }
+
+          textarea {
+            height: 100px;
           }
 
           label#label_2_5_1 {
@@ -191,11 +197,7 @@
   .social-icons {
     justify-content: space-between;
     padding-right: 30px;
-    margin-top: 50px;
-
-    @include mq(md) {
-      margin-top: 100px;
-    }
+    margin-top: 30px;
 
     li {
       a {

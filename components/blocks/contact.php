@@ -49,10 +49,12 @@ $direction_right = get_sub_field( 'direction_right' );
 		</div>
 	</div>
 </div>
-<div class="container-fluid map--area">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-12">
-			<img src="<?php echo esc_attr( $map_image['sizes']['hero_thumb'] ); ?>" class="map--area"/>
+			<div class="map--area">
+				<img src="<?php echo esc_attr( $map_image['sizes']['hero_thumb'] ); ?>" class="map--area"/>
+			</div>
 		</div>
 	</div>
 </div>

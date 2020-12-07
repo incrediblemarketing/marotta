@@ -7,7 +7,7 @@
   border-left: 10px solid $white;
   color: $white;
   background: $primary;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1em;
   font-weight: normal;
   transition: all 0.4s ease-in-out;
@@ -38,7 +38,7 @@
   border-left: 10px solid $primary;
   color: $primary;
   background: $white;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1em;
   font-weight: normal;
 
@@ -48,12 +48,12 @@
 }
 
 .btn--teal {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1rem;
   color: $primary;
 
   @include mq(xl) {
-    font-size: 1.77rem;
+    font-size: 1.2rem;
   }
 
   i {
@@ -70,7 +70,7 @@
   }
 }
 .btn--white {
-  font-size: 1.77rem;
+  font-size: 1.2rem;
   line-height: 1rem;
   color: $white;
   border: none;

@@ -1,8 +1,13 @@
 .block--white_block_with_breadcrumbs {
-  padding: 80px 15px;
+  padding: 50px 15px;
 
   @include mq(md) {
-    padding: 140px 0 112px;
+    padding: 70px 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
   .breadcrumbs {
@@ -62,6 +67,12 @@
         font-weight: 600;
         color: $primary;
       }
+    }
+  }
+
+  nav.navigation {
+    ul {
+      column-count: 2;
     }
   }
 

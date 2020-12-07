@@ -9,9 +9,11 @@
     align-items: flex-end;
     max-height: 600px;
     flex-direction: row;
+    border-bottom: 240px solid $primary;
   }
 
   @include mq(lg) {
+    border-bottom: 200px solid $primary;
     max-height: 700px;
   }
   @include mq(xl) {

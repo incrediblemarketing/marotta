@@ -1,8 +1,8 @@
 .block--testimonial_area_with_background {
-  padding: 80px 15px;
+  padding: 50px 15px;
 
   @include mq(md) {
-    padding: 96px 0 93px;
+    padding: 70px 0;
   }
 
   .image__holder {
@@ -22,20 +22,12 @@
     margin-bottom: 32px;
 
     @include mq(md) {
-      font-size: 3rem;
+      font-size: 2.5rem;
       max-width: 50vw;
     }
     @include mq(lg) {
       font-size: 3rem;
       max-width: 40vw;
-    }
-    @include mq(xxl) {
-      max-width: 35vw;
-      font-size: 3.5rem;
-    }
-    @include mq(xxl) {
-      max-width: 30vw;
-      font-size: 4rem;
     }
   }
 

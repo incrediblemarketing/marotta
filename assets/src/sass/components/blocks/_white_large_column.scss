@@ -1,8 +1,8 @@
 .block--white_large_column {
-  padding: 80px 15px;
+  padding: 50px 15px;
 
   @include mq(md) {
-    padding: 124px 0 111px;
+    padding: 70px 0;
   }
 
   h2 {
@@ -22,8 +22,29 @@
   }
 
   p {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     line-height: 1.5em;
+  }
+
+  .eapps-instagram-feed-posts-grid-load-more-text.eapps-instagram-feed-posts-grid-load-more-text-visible {
+    background: $primary;
+    height: 40px;
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    list-style: none;
+
+    li {
+      &::before {
+        display: none !important;
+      }
+    }
   }
 
   ul {
@@ -36,6 +57,10 @@
 
     @include mq(md) {
       column-count: 2;
+    }
+
+    &.one-col {
+      column-count: 1 !important;
     }
 
     li {
