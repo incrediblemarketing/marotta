@@ -2,54 +2,51 @@
    ========================================================================== */
 
 .order-1 {
-    order: 1;
+  order: 1;
 }
 
 .order-2 {
-    order: 2;
+  order: 2;
 }
 
 .order-3 {
-    order: 3;
+  order: 3;
 }
 
-@each $breakpoint,
-$size in $grid-breakpoints {
-    @media (min-width: #{$size}) {
-        .order-#{breakpoint}-1 {
-            order: 1 !important;
-        }
-        .order-#{breakpoint}-2 {
-            order: 2 !important;
-        }
-        .order-#{breakpoint}-3 {
-            order: 3 !important;
-        }
+@each $breakpoint, $size in $grid-breakpoints {
+  @media (min-width: #{$size}) {
+    .order-#{breakpoint}-1 {
+      order: 1 !important;
     }
+    .order-#{breakpoint}-2 {
+      order: 2 !important;
+    }
+    .order-#{breakpoint}-3 {
+      order: 3 !important;
+    }
+  }
 }
-
 
 /* Backgrounds
    ========================================================================== */
 
 .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  video {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translate(-50%, -50%);
-    }
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
 }
-
 
 /* Visibility
    ========================================================================== */
@@ -57,91 +54,94 @@ $size in $grid-breakpoints {
 // Hide visually and from screen readers:
 // http://juicystudio.com/article/screen-readers-display-none.php
 %hidden {
-    display: none !important;
-    visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 // Hide only visually, but have it available for screen readers:
 // http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 %visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    &.focusable:active,
-    &.focusable:focus {
-        clip: auto;
-        height: auto;
-        margin: 0;
-        overflow: visible;
-        position: static;
-        width: auto;
-    }
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
 }
 
 // Hide visually and from screenreaders, but maintain layout
 %invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .visuallyhidden,
 .screen-reader-text {
-    @extend %visuallyhidden;
+  @extend %visuallyhidden;
 }
-
 
 /* Animations */
 
 .fade-in-left {
-    position: relative;
-    left: -200px;
-    opacity: 0;
+  position: relative;
+  left: -200px;
+  opacity: 0;
 }
 
 .fade-in-right {
-    position: relative;
-    right: -200px;
-    opacity: 0;
+  position: relative;
+  right: -200px;
+  opacity: 0;
 }
 
 .fade-in {
-    position: relative;
-    opacity: 0;
+  position: relative;
+  opacity: 0;
 }
 
 .fade-in-bottom {
-    position: relative;
-    bottom: -200px;
-    opacity: 0;
+  position: relative;
+  bottom: -200px;
+  opacity: 0;
 }
 
 @keyframes scrollDown {
-    0% {
-        transform: scaleY(0);
-        transform-origin: center top;
-    }
-    32% {
-        transform: scaleY(1);
-        transform-origin: center top;
-    }
-    33% {
-        transform: scaleY(1);
-        transform-origin: center bottom;
-    }
-    65% {
-        transform: scaleY(0);
-        transform-origin: center bottom;
-    }
-    66% {
-        transform: scaleY(0);
-        transform-origin: center top;
-    }
-    100% {
-        transform: scaleY(0);
-        transform-origin: center top;
-    }
+  0% {
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+  32% {
+    transform: scaleY(1);
+    transform-origin: center top;
+  }
+  33% {
+    transform: scaleY(1);
+    transform-origin: center bottom;
+  }
+  65% {
+    transform: scaleY(0);
+    transform-origin: center bottom;
+  }
+  66% {
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+}
+
+.two--columns {
+  column-count: 2;
 }

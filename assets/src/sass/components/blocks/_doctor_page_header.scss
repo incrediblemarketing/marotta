@@ -18,6 +18,7 @@
   }
   @include mq(xl) {
     max-height: unset;
+    height: 1180px;
   }
 
   .image__holder {

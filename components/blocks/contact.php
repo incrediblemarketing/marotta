@@ -20,6 +20,7 @@ $fax             = get_field( 'business_fax', 'option' );
 $map_image       = get_field( 'map_image', 'option' );
 $direction_left  = get_sub_field( 'direction_left' );
 $direction_right = get_sub_field( 'direction_right' );
+$hours           = get_field( 'business_hours', 'option' );
 
 ?>
 
@@ -31,6 +32,7 @@ $direction_right = get_sub_field( 'direction_right' );
 						<?php if ( $address_link && $address && $address2 ) : ?>
 						<p><i class="fas fa-map-marker-alt"></i> 	<a href="<?php echo esc_attr( $address_link ); ?>" class="btn--teal" target="_blank"><?php echo esc_attr( $address ); ?><br /><?php echo esc_attr( $address2 ); ?></a></p>
 						<?php endif; ?>
+						<p><i class="far fa-clock"></i> <?php echo $hours; ?></p>
 					</div>
 					<div class="phone--area">
 						<?php if ( $phone_url && $phone ) : ?>
