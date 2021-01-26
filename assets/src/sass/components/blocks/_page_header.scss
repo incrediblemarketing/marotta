@@ -44,7 +44,7 @@
   .header--content {
     margin-left: 0;
 
-    @include mq(xl) {
+    @include mq(xxxl) {
       margin-left: -4vw;
     }
 

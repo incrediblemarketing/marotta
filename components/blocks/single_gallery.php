@@ -37,15 +37,6 @@ $gallery = get_sub_field( 'gallery' );
 					</div>
 					<?php get_template_part( 'components/swiper-nav' ); ?>
 				</div>
-				<div class="swiper-container gallery-thumb">
-					<div class="swiper-wrapper">
-					<?php foreach ( $gallery_images as $image ) : ?>
-							<div class="swiper-slide">
-								<img src="<?php echo esc_url( $image['sizes']['gallery_thumb'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-							</div>
-						<?php endforeach; ?>
-					</div>
-				</div>
 			<?php endif; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>

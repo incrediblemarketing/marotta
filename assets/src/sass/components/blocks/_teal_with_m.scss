@@ -49,12 +49,16 @@
       }
 
       a {
-        color: #ddd;
+        color: $white;
 
         &:hover {
           color: $black;
         }
       }
     }
+  }
+
+  &#block-5fca5a7782a1a {
+    text-align: left;
   }
 }
